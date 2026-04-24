@@ -306,6 +306,50 @@ a {
   background: rgba(138, 240, 167, 0.08);
 }
 
+.intel-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.intel-card {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.015);
+  padding: 10px;
+}
+
+.intel-label {
+  color: #d5e2d3;
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.intel-main {
+  margin-top: 6px;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.intel-meta {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.intel-list {
+  margin-top: 8px;
+  display: grid;
+  gap: 6px;
+}
+
+.intel-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #cbc7bc;
+  font-size: 0.78rem;
+}
+
 .quote-main {
   display: grid;
   gap: 8px;
@@ -563,6 +607,10 @@ a {
   }
 
   .watchlist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intel-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

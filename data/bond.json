@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-04-24 01:48 JST",
+  "updated_at": "2026-04-24 09:12 JST",
   "category": "bond",
   "items": [
     {
       "symbol": "US10Y",
       "name": "米10年国債利回り",
-      "price": 4.3,
-      "display_price": "4.30",
-      "change_pct": 0.0,
-      "high": 4.32,
+      "price": 4.34,
+      "display_price": "4.34",
+      "change_pct": 0.9302325581395358,
+      "high": 4.34,
       "low": 4.26,
       "decimals": 2,
       "sparkline": [
@@ -88,7 +88,8 @@
         4.26,
         4.26,
         4.3,
-        4.3
+        4.3,
+        4.34
       ],
       "currency": "%",
       "duration": "8.3y"
@@ -200,10 +201,10 @@
     {
       "symbol": "US02Y",
       "name": "米2年国債利回り",
-      "price": 3.79,
-      "display_price": "3.79",
-      "change_pct": 0.2645502645502707,
-      "high": 3.79,
+      "price": 3.83,
+      "display_price": "3.83",
+      "change_pct": 1.0554089709762544,
+      "high": 3.83,
       "low": 3.71,
       "decimals": 2,
       "sparkline": [
@@ -283,7 +284,8 @@
         3.71,
         3.72,
         3.78,
-        3.79
+        3.79,
+        3.83
       ],
       "currency": "%",
       "duration": "1.9y"

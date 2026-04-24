@@ -1,442 +1,891 @@
 {
-  "updated_at": "2026-04-24 09:05 JST",
+  "updated_at": "2026-04-24 09:12 JST",
   "market_overview": {
-    "risk_mode": "RISK OFF / 円高圧力",
-    "macro_tone": "中東情勢と原油高を軸に、ドル円は上値が重く、日本株はグロース中心に選別色が強い",
+    "risk_mode": "Risk Off 寄りの中立",
+    "macro_tone": "日経平均株価一時6万円超えも、前日比445円安 なぜ、日本株は大きく変動する？ 野村證券ストラテジストが解説 - nomura.co.jp / 日経平均株価初の6万円、崩れぬ企業増益期待 戦闘終結へ先走るマネー - 日本経済新聞",
     "geopolitical_risk": "high",
     "related_assets": {
       "oil": "WTI 83.20 (+1.4%)",
       "vix": "16.80 (+4.1%)",
       "usdjpy": "154.82 (+0.3%)",
-      "fear_greed": "46 (Fear)"
+      "fear_greed": "39 (Fear)"
+    },
+    "intel": {
+      "pizza_meter": {
+        "score": 58,
+        "level": 3,
+        "status": "DOUGHCON 3",
+        "top_spot": "Club Visions",
+        "top_spot_pct": 563,
+        "active_spikes": 5,
+        "updated_at": "2026-04-23T23:42:59.000Z",
+        "source": "https://pizzint.watch/api/dashboard-data"
+      },
+      "polymarket_iran": {
+        "conflict_end_yes": 100.0,
+        "peace_deal_yes": 47.5,
+        "hormuz_normal_yes": 3.1,
+        "diplomatic_meeting_yes": 52.5,
+        "updated_at": "2026-04-24 09:12 JST",
+        "source": "https://polymarket.com/iran"
+      }
     }
   },
   "ai_summary": {
     "global": {
-      "main_theme": "中東リスクと原油高が市場の主導材料で、為替は円高方向を意識、日本株は内需よりも外部環境感応度の高い銘柄が売られやすい地合いです。",
-      "rise_factors": "原油高そのものはエネルギー関連の支え。安全資産選好の円買いも短期的なテーマです。",
-      "fall_factors": "中東情勢の不透明感、インフレ再加速懸念、金利高止まりが株式全体の重石です。",
-      "risk_on_off": "リスクオフ寄り。地政学とインフレの再評価が同時進行しています。",
-      "focus_points": "USD/JPY の方向、原油高が継続するか、インフレ統計の再加速が債券と株式の両方にどう波及するかを注視します。",
-      "jp_swing_hint": "日本株は指数よりテーマ別で見た方が良く、輸出・半導体よりも資源、防衛、ディフェンシブの相対優位を優先して確認したい局面です。"
+      "main_theme": "日経平均株価一時6万円超えも、前日比445円安 なぜ、日本株は大きく変動する？ 野村證券ストラテジストが解説 - nomura.co.jp / 日経平均株価初の6万円、崩れぬ企業増益期待 戦闘終結へ先走るマネー - 日本経済新聞",
+      "rise_factors": "BTC価格の強気の勢い、ペンタゴン支持のインフレ警告に直面 - CoinDesk / DeepSeekニュースが安全な避難所を後押しする中、スイスフラン、日本円が上昇",
+      "fall_factors": "イラン戦争でエネルギー不安が高まる中、日本のコアインフレは5カ月ぶりに加速 / 最新のインフレ統計があなたに与える 3 つの影響",
+      "risk_on_off": "リスクオフ寄り。高インパクト: ＮＹダウ終値、１７９ドル安の４万９３１０ドル…原油価格の上昇が相場の重荷に - 読売新聞 / Ｎｅｗｓモーニングサテライト【原油高インフレの抑制と財政コスト】(テレ東、2026/4/23 05:45 OA)の番組情報ページ - tv-tokyo.co.jp",
+      "focus_points": "日経平均株価一時6万円超えも、前日比445円安 なぜ、日本株は大きく変動する？ 野村證券ストラテジストが解説 - nomura.co.jp / 日経平均株価初の6万円、崩れぬ企業増益期待 戦闘終結へ先走るマネー - 日本経済新聞 / 日経平均株価、一時初の６万円台…証券会社では拍手・くす玉で大台突破を祝福 - 読売新聞",
+      "jp_swing_hint": "寄り前ニュースの方向とUSDJPYを必ず確認し、指数寄与の大きい銘柄から優先判断します。"
     },
     "categories": {
       "jp_stock": {
         "label": "日本株",
-        "main_theme": "原油高と外部環境悪化を受けて、東証グロースや高バリュエーション銘柄に逆風が出ています。",
-        "rise_factors": "金利上昇局面に相対耐性のある資源・一部バリュー。",
-        "fall_factors": "グロース指数、家計負担増を意識した内需鈍化懸念。",
-        "risk_on_off": "ややリスクオフ。指数主導ではなく業種選別です。",
-        "focus_points": "東証グロースの弱さが日経平均大型株へ波及するかを見ます。",
-        "jp_swing_hint": "日銀据え置きでも正常化観測が残るため、金利感応度の高い銘柄は短期では重さを見ておきたいです。"
+        "main_theme": "日経平均株価一時6万円超えも、前日比445円安 なぜ、日本株は大きく変動する？ 野村證券ストラテジストが解説 - nomura.co.jp / 日経平均株価初の6万円、崩れぬ企業増益期待 戦闘終結へ先走るマネー - 日本経済新聞",
+        "rise_factors": "好材料は限定的です。",
+        "fall_factors": "大きな悪材料は限定的です。",
+        "risk_on_off": "リスクオフ寄り。高インパクト: NY原油：大幅続伸で95.85ドル、ホルムズ海峡を巡る対立が続く / 原油高などを受け売り先行スタートもインテルの好決算などが支えか／日経225・本日の想定レンジ",
+        "focus_points": "日経平均株価一時6万円超えも、前日比445円安 なぜ、日本株は大きく変動する？ 野村證券ストラテジストが解説 - nomura.co.jp / 日経平均株価初の6万円、崩れぬ企業増益期待 戦闘終結へ先走るマネー - 日本経済新聞 / 日経平均株価、一時初の６万円台…証券会社では拍手・くす玉で大台突破を祝福 - 読売新聞",
+        "jp_swing_hint": "寄り前ニュースの方向とUSDJPYを必ず確認し、指数寄与の大きい銘柄から優先判断します。"
       },
       "us_stock": {
         "label": "米国株",
-        "main_theme": "個別材料はあるものの、全体相場の主因は金利とマクロで、個別株ニュースの市場波及は限定的です。",
-        "rise_factors": "大きな追い風は限定的で、ディフェンシブとキャッシュフローの強い銘柄が相対優位です。",
-        "fall_factors": "金利高止まりとインフレ再評価がグロース株の重石です。",
-        "risk_on_off": "中立からややリスクオフ。個別株よりマクロ優先です。",
-        "focus_points": "指数の方向は個別 M&A より金利の変化率に左右されやすいです。",
-        "jp_swing_hint": "米グロースの弱さは日本の半導体主力にも波及しやすいため、SOX 連動を優先確認します。"
+        "main_theme": "ＮＹダウ終値、１７９ドル安の４万９３１０ドル…原油価格の上昇が相場の重荷に - 読売新聞 / イラン戦争でエネルギー不安が高まる中、日本のコアインフレは5カ月ぶりに加速",
+        "rise_factors": "DeepSeekニュースが安全な避難所を後押しする中、スイスフラン、日本円が上昇",
+        "fall_factors": "イラン戦争でエネルギー不安が高まる中、日本のコアインフレは5カ月ぶりに加速 / 米国とコロンビアの関税争いでアラビカ種コーヒーの価格が過去最高値に",
+        "risk_on_off": "リスクオフ寄り。高インパクト: ＮＹダウ終値、１７９ドル安の４万９３１０ドル…原油価格の上昇が相場の重荷に - 読売新聞 / イラン戦争でエネルギー不安が高まる中、日本のコアインフレは5カ月ぶりに加速",
+        "focus_points": "ＮＹダウ終値、１７９ドル安の４万９３１０ドル…原油価格の上昇が相場の重荷に - 読売新聞 / イラン戦争でエネルギー不安が高まる中、日本のコアインフレは5カ月ぶりに加速 / 米国市場データ ＮＹダウは179ドル安と反落 （4月23日）(株探ニュース) - Yahoo!ファイナンス",
+        "jp_swing_hint": "寄り前ニュースの方向とUSDJPYを必ず確認し、指数寄与の大きい銘柄から優先判断します。"
       },
       "fx": {
         "label": "為替",
-        "main_theme": "ドル円は原油高と地政学を背景に上値の重さが意識されつつも、ドル高圧力も残るため、方向感は一方向ではなく神経質です。",
-        "rise_factors": "米金利高とドル高基調はなお残っています。",
-        "fall_factors": "中東リスクで円買いが入りやすく、160円接近局面では追いかけにくいです。",
-        "risk_on_off": "為替はリスクオフ寄り。円高要因とドル高要因の綱引きです。",
-        "focus_points": "原油、米金利、160円意識のフローを同時に見る必要があります。",
-        "jp_swing_hint": "輸出株を買うなら、ドル円が再び強く戻せるかを確認してからの方が安全です。"
+        "main_theme": "「円安=株高」は本当か 輸出企業の増益と家計を圧迫するインフレの構図 / NY金：弱含みで4724.00ドル、原油先物の続伸を嫌気",
+        "rise_factors": "好材料は限定的です。",
+        "fall_factors": "大きな悪材料は限定的です。",
+        "risk_on_off": "リスクオフ寄り。高インパクト: NY金：弱含みで4724.00ドル、原油先物の続伸を嫌気 / NY為替：米イラン協議難航、原油高でドル続伸",
+        "focus_points": "「円安=株高」は本当か 輸出企業の増益と家計を圧迫するインフレの構図 / NY金：弱含みで4724.00ドル、原油先物の続伸を嫌気 / NY為替：米イラン協議難航、原油高でドル続伸",
+        "jp_swing_hint": "寄り前ニュースの方向とUSDJPYを必ず確認し、指数寄与の大きい銘柄から優先判断します。"
       },
       "crypto": {
         "label": "仮想通貨",
-        "main_theme": "センチメントは弱めですが、BTC は大崩れではなく、相場全体のリスクオフに対する耐性を確認する局面です。",
-        "rise_factors": "BTC の週次終値や資金流入継続が下値の支えです。",
-        "fall_factors": "Fear & Greed が Fear 圏で、リスク資産全体の地合いが重いです。",
-        "risk_on_off": "中立からややリスクオフ。アルトより BTC 優先です。",
-        "focus_points": "Fear & Greed、BTC の 8 万ドル回復可否、規制・取引所関連ニュースを見ます。",
-        "jp_swing_hint": "短期は BTC 優位で、アルト追随はボリューム確認後の方が良いです。"
+        "main_theme": "メキシコ、日本に原油100万バレル輸出へ イラン情勢受けエネ協力で合意 - Reuters / BTC価格の強気の勢い、ペンタゴン支持のインフレ警告に直面 - CoinDesk",
+        "rise_factors": "BTC価格の強気の勢い、ペンタゴン支持のインフレ警告に直面 - CoinDesk / BTCは高値更新後に失速 先物市場ではマグマ蓄積か - bitbank",
+        "fall_factors": "Anchorage Digital、Solana クライアント向けにマリネードを活用したステーキング戦略を追加 / 仮想通貨擁護団体は市場構造法案に対する行動が「重要」だと主張",
+        "risk_on_off": "リスクオフ寄り。高インパクト: メキシコ、日本に原油100万バレル輸出へ イラン情勢受けエネ協力で合意 - Reuters / Anchorage Digital、Solana クライアント向けにマリネードを活用したステーキング戦略を追加",
+        "focus_points": "メキシコ、日本に原油100万バレル輸出へ イラン情勢受けエネ協力で合意 - Reuters / BTC価格の強気の勢い、ペンタゴン支持のインフレ警告に直面 - CoinDesk / イ・ソンビン、非正規雇用→仮想通貨の世界に飛び込む キム・ヨンデはエリート社員に 韓国ドラマ『月まで行こう』、U-NEXTで配信決定＜キャスト・あらすじ＞ - 山陽新聞デジタル｜…",
+        "jp_swing_hint": "寄り前ニュースの方向とUSDJPYを必ず確認し、指数寄与の大きい銘柄から優先判断します。"
       },
       "bond": {
         "label": "債券",
-        "main_theme": "インフレ再加速観測が再び債券市場を圧迫し、株式バリュエーションの重石になっています。",
-        "rise_factors": "安全資産需要はあるものの、インフレ懸念がそれを打ち消しています。",
-        "fall_factors": "燃料高、インフレ統計の上振れ、金利差維持観測です。",
-        "risk_on_off": "債券には逆風。利回り高止まり前提で見るべき局面です。",
-        "focus_points": "米10年、インフレ関連ヘッドライン、燃料価格の持続性が重要です。",
-        "jp_swing_hint": "日本株は長期金利よりも米金利とドル円経由の外部要因を先に見る方が実務的です。"
+        "main_theme": "Ｎｅｗｓモーニングサテライト【原油高インフレの抑制と財政コスト】(テレ東、2026/4/23 05:45 OA)の番組情報ページ - tv-tokyo.co.jp / 海外旅行は「今でしょ｣ GW予約好調、先行き不透明・インフレに焦燥感 - 日本経済新聞",
+        "rise_factors": "好材料は限定的です。",
+        "fall_factors": "最新のインフレ統計があなたに与える 3 つの影響 / 企業が関税還付請求を急ぐ中、エイソスは米国に700万ポンドを要求",
+        "risk_on_off": "リスクオフ寄り。高インパクト: Ｎｅｗｓモーニングサテライト【原油高インフレの抑制と財政コスト】(テレ東、2026/4/23 05:45 OA)の番組情報ページ - tv-tokyo.co.jp / 【日本国債、金利上昇で大注目】いま買うなら個人向け国債か新窓販国債か…貯金だけではない安全資産の作り方 - JBpress",
+        "focus_points": "Ｎｅｗｓモーニングサテライト【原油高インフレの抑制と財政コスト】(テレ東、2026/4/23 05:45 OA)の番組情報ページ - tv-tokyo.co.jp / 海外旅行は「今でしょ｣ GW予約好調、先行き不透明・インフレに焦燥感 - 日本経済新聞 / 【日本国債、金利上昇で大注目】いま買うなら個人向け国債か新窓販国債か…貯金だけではない安全資産の作り方 - JBpress",
+        "jp_swing_hint": "寄り前ニュースの方向とUSDJPYを必ず確認し、指数寄与の大きい銘柄から優先判断します。"
       }
     }
   },
   "news": [
     {
-      "title": "米イラン戦争、両国が船舶拿捕後、ホルムズ海峡を巡る海上のにらみ合いに発展",
-      "summary": "市場全体への影響が最も大きい材料です。原油高、物流不安、リスク回避を通じて為替・株・債券すべてに波及しやすいと判断しました。",
-      "sentiment": "negative",
-      "impact": "high",
-      "source": "jp.investing.com",
-      "link": "https://jp.investing.com/news/forex-news/article-93CH-1501991",
-      "published_at": "2026-04-23 10:15 JST",
-      "tags": ["geopolitics", "oil", "market-wide", "scope_macro"],
-      "risk_level": "high",
-      "related_assets": ["原油", "VIX", "USDJPY"],
-      "category": "fx",
-      "locale": "jp",
-      "scope": "macro",
-      "significance_score": 195,
-      "fx_bias": "円高要因"
-    },
-    {
-      "title": "欧米為替見通し: ドル・円は伸び悩みか、原油高・ドル高も160円台にらみ円売り後退",
-      "summary": "為替の中心論点を要約したニュースで、ドル高と円買い圧力の綱引きをそのまま表しています。USD/JPY の方向判断に直接効くため上位に置きました。",
-      "sentiment": "neutral",
-      "impact": "high",
-      "source": "zaikei.co.jp",
-      "link": "https://www.zaikei.co.jp/article/20260423/851585.html",
-      "published_at": "2026-04-23 19:17 JST",
-      "tags": ["fx", "macro", "usd-jpy", "scope_macro"],
-      "risk_level": "medium",
-      "related_assets": ["USDJPY", "原油"],
-      "category": "fx",
-      "locale": "jp",
-      "scope": "macro",
-      "significance_score": 188,
-      "fx_bias": "円高要因"
-    },
-    {
-      "title": "東証グロ－ス指数は大幅続落、原油価格高止まりなど警戒",
-      "summary": "日本株の中では市場全体を代表する材料です。個別株ではなく指数の弱さを示しており、国内リスク選好の低下を反映しています。",
-      "sentiment": "negative",
-      "impact": "high",
-      "source": "zaikei.co.jp",
-      "link": "https://www.zaikei.co.jp/article/20260423/851574.html",
-      "published_at": "2026-04-23 16:53 JST",
-      "tags": ["jp-stock", "growth", "market-wide", "scope_macro"],
-      "risk_level": "medium",
-      "related_assets": ["東証グロース", "原油"],
-      "category": "jp_stock",
-      "locale": "jp",
-      "scope": "macro",
-      "significance_score": 176
-    },
-    {
-      "title": "最新のインフレ統計があなたに与える 3 つの影響",
-      "summary": "見出しは一般向けですが、実質的にはインフレ再評価の話で、債券利回りと株式バリュエーションに直結するため重要度を高く見ています。",
-      "sentiment": "negative",
-      "impact": "high",
-      "source": "feeds.bbci.co.uk",
-      "link": "https://feeds.bbci.co.uk/news/business/rss.xml",
-      "published_at": "2026-04-23 09:40 JST",
-      "tags": ["inflation", "rates", "bond", "scope_macro"],
-      "risk_level": "medium",
-      "related_assets": ["US10Y", "株式指数"],
-      "category": "bond",
-      "locale": "en",
-      "scope": "macro",
-      "significance_score": 172
-    },
-    {
-      "title": "BTC価格が8万ドルに戻らなかった後、ビットコインの週次終値が注目",
-      "summary": "仮想通貨カテゴリでは最も市場性が高いニュースです。単発の個別案件より、BTC の水準維持とセンチメントの方が全体相場に効きます。",
+      "title": "日経平均株価一時6万円超えも、前日比445円安 なぜ、日本株は大きく変動する？ 野村證券ストラテジストが解説 - nomura.co.jp",
+      "summary": "日経平均株価一時6万円超えも、前日比445円安 なぜ、日本株は大きく変動する？ 野村證券ストラテジストが解説 nomura.co.jp",
       "sentiment": "neutral",
       "impact": "medium",
-      "source": "cointelegraph.com",
-      "link": "https://cointelegraph.com/rss",
-      "published_at": "2026-04-23 08:55 JST",
-      "tags": ["crypto", "btc", "sentiment", "scope_macro"],
-      "risk_level": "medium",
-      "related_assets": ["BTC", "Fear & Greed"],
-      "category": "crypto",
-      "locale": "en",
+      "source": "Google News 日経平均6万円",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB4M19mRnhZWm9yWHlhQ0Q0WDc0SHk1MVA0UTM2VTFjaHdWeTc1VTB0T0dna3hYbUI0U1FHUDN6YXdwZk9oQzVqZzR2UTdiZXNyMTZ2dTNxSkZFS3JBRi04?oc=5",
+      "published_at": "2026-04-23 18:18 JST",
+      "tags": [
+        "macro",
+        "scope_benchmark"
+      ],
+      "risk_level": "low",
+      "related_assets": [
+        "USDJPY"
+      ],
+      "category": "jp_stock",
+      "locale": "jp",
+      "scope": "benchmark",
+      "significance_score": 430,
+      "fx_bias": "円安要因"
+    },
+    {
+      "title": "日経平均株価初の6万円、崩れぬ企業増益期待 戦闘終結へ先走るマネー - 日本経済新聞",
+      "summary": "日経平均株価初の6万円、崩れぬ企業増益期待 戦闘終結へ先走るマネー 日本経済新聞",
+      "sentiment": "neutral",
+      "impact": "medium",
+      "source": "Google News 日経平均6万円",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9yUDB0XzZUT1VkZEtuQTRMR1hmdXZpU3dxc3hFZ2J4bm1UeGczQ0lNem5vZDdPN2NQZEtQU3J2a0FzcEdDLWROUlFJRFpZWlU3NEE0bUFsY1JTS0hLWFd5QW5zVFFXbUNscjdVNQ?oc=5",
+      "published_at": "2026-04-23 17:23 JST",
+      "tags": [
+        "macro",
+        "scope_benchmark"
+      ],
+      "risk_level": "low",
+      "related_assets": [
+        "USDJPY"
+      ],
+      "category": "jp_stock",
+      "locale": "jp",
+      "scope": "benchmark",
+      "significance_score": 430
+    },
+    {
+      "title": "ＮＹダウ終値、１７９ドル安の４万９３１０ドル…原油価格の上昇が相場の重荷に - 読売新聞",
+      "summary": "ＮＹダウ終値、１７９ドル安の４万９３１０ドル…原油価格の上昇が相場の重荷に 読売新聞",
+      "sentiment": "neutral",
+      "impact": "high",
+      "source": "Google News 米国株",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBpZElSZDhyTWZZUGpkU3hxMnBtYjJQVVJvMTdKMU9PLXhyTDRuUHZLTmhLRkl3YUxPRkl5akJya2xVMzNIbjV5NjJJdGtkTjE3VVNrMWx6RERwLU83enF1eHZVVnE?oc=5",
+      "published_at": "2026-04-24 05:49 JST",
+      "tags": [
+        "macro",
+        "scope_macro"
+      ],
+      "risk_level": "low",
+      "related_assets": [
+        "USDJPY"
+      ],
+      "category": "us_stock",
+      "locale": "jp",
       "scope": "macro",
-      "significance_score": 148
+      "significance_score": 335,
+      "fx_bias": "円高要因"
+    },
+    {
+      "title": "Ｎｅｗｓモーニングサテライト【原油高インフレの抑制と財政コスト】(テレ東、2026/4/23 05:45 OA)の番組情報ページ - tv-tokyo.co.jp",
+      "summary": "Ｎｅｗｓモーニングサテライト【原油高インフレの抑制と財政コスト】(テレ東、2026/4/23 05:45 OA)の番組情報ページ tv-tokyo.co.jp",
+      "sentiment": "neutral",
+      "impact": "high",
+      "source": "Google News Bond",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMjVGTVVudllWNkJicnV3QUF0bElXcnZmYjJVbkU4RnloS0k4UHJESEV0aUE0Rk45QWgyY3p5MkdwZGlOYkN5NVJtMUotWVFidFE0NW56cmVrNGtHSk9JSV93UHRKWkpYRTUzT0RsMXdYQ2ZhVE9POG5ndmU0TEJibkdaUzFFUzliTnc2YVF5UQ?oc=5",
+      "published_at": "2026-04-24 04:01 JST",
+      "tags": [
+        "japan",
+        "scope_macro"
+      ],
+      "risk_level": "low",
+      "related_assets": [
+        "日経225",
+        "USDJPY"
+      ],
+      "category": "bond",
+      "locale": "jp",
+      "scope": "macro",
+      "significance_score": 325
+    },
+    {
+      "title": "メキシコ、日本に原油100万バレル輸出へ イラン情勢受けエネ協力で合意 - Reuters",
+      "summary": "メキシコ、日本に原油100万バレル輸出へ イラン情勢受けエネ協力で合意 Reuters",
+      "sentiment": "neutral",
+      "impact": "high",
+      "source": "Google News Macro",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPR0Z5c2ozalQwaXdRVGFRLXZCSHdMQllXVGRIZFBZS092MWN6SS1uUmxQVDdRNlJILU51Z185VFVmTDhZMHJZT3RwamdKeVAxandYTlM4d0lIVmZ6d0JuSFRja3J1SlpYY1JxSGt5SmdXdThBd09vWklud1kzUXJSaWgwdjlVYXNa?oc=5",
+      "published_at": "2026-04-24 01:43 JST",
+      "tags": [
+        "macro",
+        "scope_macro"
+      ],
+      "risk_level": "low",
+      "related_assets": [
+        "USDJPY"
+      ],
+      "category": "crypto",
+      "locale": "jp",
+      "scope": "macro",
+      "significance_score": 320
     }
   ],
   "category_news": {
     "jp_stock": [
       {
-        "title": "東証グロ－ス指数は大幅続落、原油価格高止まりなど警戒",
-        "summary": "日本株全体で何が売られているかを見る上で最も重要です。個別材料ではなく相場全体のリスク許容度低下を表しています。",
-        "sentiment": "negative",
-        "impact": "high",
-        "source": "zaikei.co.jp",
-        "link": "https://www.zaikei.co.jp/article/20260423/851574.html",
-        "published_at": "2026-04-23 16:53 JST",
-        "tags": ["jp-stock", "growth", "scope_macro"],
-        "risk_level": "medium",
-        "related_assets": ["東証グロース", "原油"],
-        "category": "jp_stock",
-        "locale": "jp",
-        "scope": "macro",
-        "significance_score": 176
-      },
-      {
-        "title": "日銀据え置きでも正常化継続 1%視野と家計・企業への影響",
-        "summary": "政策据え置きでも将来の正常化観測が残る点が重要です。銀行・不動産・グロースの相対強弱を見る材料になります。",
-        "sentiment": "neutral",
-        "impact": "high",
-        "source": "zaikei.co.jp",
-        "link": "https://www.zaikei.co.jp/article/20260320/847719.html",
-        "published_at": "2026-03-20 16:24 JST",
-        "tags": ["boj", "policy", "rates", "scope_macro"],
-        "risk_level": "medium",
-        "related_assets": ["日銀", "日本株"],
-        "category": "jp_stock",
-        "locale": "jp",
-        "scope": "macro",
-        "significance_score": 165
-      },
-      {
-        "title": "「円安=株高」は本当か 輸出企業の増益と家計を圧迫するインフレの構図",
-        "summary": "日本株を見る上での本質的な論点です。円安メリットと内需への痛みが同時にあるため、セクター選別に直結します。",
+        "title": "日経平均株価、一時初の６万円台…証券会社では拍手・くす玉で大台突破を祝福 - 読売新聞",
+        "summary": "日経平均株価、一時初の６万円台…証券会社では拍手・くす玉で大台突破を祝福 読売新聞",
         "sentiment": "neutral",
         "impact": "medium",
-        "source": "zaikei.co.jp",
-        "link": "https://www.zaikei.co.jp/article/20260326/848422.html",
-        "published_at": "2026-03-26 17:16 JST",
-        "tags": ["yen", "inflation", "sector", "scope_macro"],
-        "risk_level": "medium",
-        "related_assets": ["USDJPY", "輸出株"],
+        "source": "Google News 日経平均6万円",
+        "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5aYWxnb2VsYzNLZjlFRHI5X0hZWnJQbEpmaGJUUGFDdm1mQUktX05IalFhUjI3dkQzSXF4ZUtqWTRkenFpY0dXdkg3d2Q4Qy1UX0tWVE43ZzRiZzRHRk83S3FmZEg?oc=5",
+        "published_at": "2026-04-23 12:05 JST",
+        "tags": [
+          "macro",
+          "scope_benchmark"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
         "category": "jp_stock",
         "locale": "jp",
-        "scope": "macro",
-        "significance_score": 154
+        "scope": "benchmark",
+        "significance_score": 430
       },
       {
-        "title": "2025年度の倒産件数は4年連続で増加、今後も増加傾向か 東京商工リサーチ",
-        "summary": "個別銘柄ではなく国内景気の地合いを見る材料として採用しました。内需と中小型株にはじわじわ効くタイプの悪材料です。",
-        "sentiment": "negative",
+        "title": "日経平均は初の一時6万円台：識者はこうみる - Reuters",
+        "summary": "日経平均は初の一時6万円台：識者はこうみる Reuters",
+        "sentiment": "neutral",
         "impact": "medium",
-        "source": "zaikei.co.jp",
-        "link": "https://www.zaikei.co.jp/article/20260411/850022.html",
-        "published_at": "2026-04-11 11:53 JST",
-        "tags": ["domestic-demand", "credit", "scope_macro"],
-        "risk_level": "medium",
-        "related_assets": ["内需", "中小型株"],
+        "source": "Google News 日経平均6万円",
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9SWlV0aTVIdGY4WndWOVZHOExvMndVbWdUVHdCZ0pfcGhFRTJhZzN4MWpWQnppcEp2dVFFN1JpSlR6Y1Vac0RSaFItTHlPNjFvZlVKSGlVT2hkcVhTMlVMNWhucEVPNk43UnR6SHdBWGxJcG1IN3FCcg?oc=5",
+        "published_at": "2026-04-23 11:53 JST",
+        "tags": [
+          "macro",
+          "scope_benchmark"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
         "category": "jp_stock",
         "locale": "jp",
-        "scope": "macro",
-        "significance_score": 150
+        "scope": "benchmark",
+        "significance_score": 430
+      },
+      {
+        "title": "「水増し」と「錯覚」の日経平均6万円 暮らしの豊かさは置き去りか - 朝日新聞",
+        "summary": "「水増し」と「錯覚」の日経平均6万円 暮らしの豊かさは置き去りか 朝日新聞",
+        "sentiment": "neutral",
+        "impact": "medium",
+        "source": "Google News 日経平均6万円",
+        "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBJWmxtbFM0OGF5RnpUdGxReXdkQkI1ZERVbXBmUVVYdkVoalpTeUtFNG54cDB5ZlgwanRkNU5LR0VTNGdFOEk2Mm5kMXJEcHlvbXpqZEp5OVItT0dEdXBIRjNxX2ticW8?oc=5",
+        "published_at": "2026-04-23 11:31 JST",
+        "tags": [
+          "macro",
+          "scope_benchmark"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "jp_stock",
+        "locale": "jp",
+        "scope": "benchmark",
+        "significance_score": 430
+      },
+      {
+        "title": "日経平均、一時史上初の6万円突破！株高3つの要因 - マネクリ",
+        "summary": "日経平均、一時史上初の6万円突破！株高3つの要因 マネクリ",
+        "sentiment": "neutral",
+        "impact": "medium",
+        "source": "Google News 日経平均6万円",
+        "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9rdXY3c0E0VnhRSUVUYmN1SEstaThRYUZ4T05ZZzlONWlfY2twS2RfMy1fS1J6TzF3dGRBbXh4T2tiZWZrVjJDSEhXQXVLc2NIbFlPVdIBV0FVX3lxTE12NHV0QjZZYlRuUXhrWndoQVQ4RjV4V0p5WUZTQzRNNlZCQmEydS1Xdmtfc0pmcmN4OFBINUlTR3pSS09iNi1KajlKZ0s0VlJucWpreVI0WQ?oc=5",
+        "published_at": "2026-04-23 10:00 JST",
+        "tags": [
+          "macro",
+          "scope_benchmark"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "jp_stock",
+        "locale": "jp",
+        "scope": "benchmark",
+        "significance_score": 430
+      },
+      {
+        "title": "日経平均が一時史上初の6万円台 終値は445円安、利益確定売りで - 朝日新聞",
+        "summary": "日経平均が一時史上初の6万円台 終値は445円安、利益確定売りで 朝日新聞",
+        "sentiment": "neutral",
+        "impact": "medium",
+        "source": "Google News 日経平均6万円",
+        "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9IX0NKM09DbGZpdnJBMHc4bkdaRzdpYkp4UmZwV0VxemdtVC1JZW5VMmFZVGhXU3BJc0trN3BSTUJBeDNYaE1rMXQyUlRna0haY3YtWkhWWHdJU0NWTHdZSnlJWm1ObzQ?oc=5",
+        "published_at": "2026-04-23 09:28 JST",
+        "tags": [
+          "macro",
+          "scope_benchmark"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "jp_stock",
+        "locale": "jp",
+        "scope": "benchmark",
+        "significance_score": 430,
+        "fx_bias": "円安要因"
+      },
+      {
+        "title": "日経平均株価が初の一時6万円台 AI・半導体関連に買い - 日本経済新聞",
+        "summary": "日経平均株価が初の一時6万円台 AI・半導体関連に買い 日本経済新聞",
+        "sentiment": "neutral",
+        "impact": "medium",
+        "source": "Google News 日経平均6万円",
+        "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBMN1RhcjJibFAxMTkxMENnNk5WRWZuMk1zNG5HQzRSR3daaHZPaWozRWF0X1RMcVd0bElPX0dyQmdHUGtpZk51d1ZXVUhMLURwOVFGcVpVOGc1ZzIwRjdQS2FOck9kczFXMkc0OA?oc=5",
+        "published_at": "2026-04-23 09:07 JST",
+        "tags": [
+          "macro",
+          "scope_benchmark"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "jp_stock",
+        "locale": "jp",
+        "scope": "benchmark",
+        "significance_score": 430
       }
     ],
     "us_stock": [
       {
-        "title": "ServiceNowの株価は史上最悪の日に向かって下落し、ソフトウェア部門も崩壊する",
-        "summary": "個別株ニュースですが、ソフトウェア・高PER グロース全体のセンチメント悪化を映すため、米国株タブでは上位に置きます。ただし総合面では最重要ではありません。",
+        "title": "イラン戦争でエネルギー不安が高まる中、日本のコアインフレは5カ月ぶりに加速",
+        "summary": "政府統計によると、生鮮食料品の価格を差し引いたインフレ率は、ロイターがまとめたエコノミスト予想の１．８％と一致していた。",
         "sentiment": "negative",
-        "impact": "medium",
-        "source": "feeds.marketwatch.com",
-        "link": "https://feeds.marketwatch.com/marketwatch/topstories/",
-        "published_at": "2026-04-23 11:20 JST",
-        "tags": ["us-stock", "software", "sector", "scope_sector"],
-        "risk_level": "medium",
-        "related_assets": ["NASDAQ", "ソフトウェア"],
+        "impact": "high",
+        "source": "CNBC Markets",
+        "link": "https://www.cnbc.com/2026/04/24/japan-cpi-march-inflation-iran-war-boj-rate.html",
+        "published_at": "2026-04-24 09:06 JST",
+        "tags": [
+          "geopolitics",
+          "oil",
+          "volatility",
+          "japan",
+          "scope_macro"
+        ],
+        "risk_level": "high",
+        "related_assets": [
+          "原油",
+          "VIX",
+          "USDJPY",
+          "日経225"
+        ],
         "category": "us_stock",
         "locale": "en",
-        "scope": "sector",
-        "significance_score": 118
+        "scope": "macro",
+        "significance_score": 290
       },
       {
-        "title": "Warner Bros Discovery株主がパラマウント合併を承認",
-        "summary": "M&A 材料としては大きいものの、市場全体よりメディアセクター色が強いニュースです。米国株タブには残しつつ、総合面では優先度を落とします。",
+        "title": "米国市場データ ＮＹダウは179ドル安と反落 （4月23日）(株探ニュース) - Yahoo!ファイナンス",
+        "summary": "米国市場データ ＮＹダウは179ドル安と反落 （4月23日）(株探ニュース) Yahoo!ファイナンス",
         "sentiment": "neutral",
         "impact": "medium",
-        "source": "jp.investing.com",
-        "link": "https://jp.investing.com/news/stock-market-news/article-1502000",
-        "published_at": "2026-04-23 12:00 JST",
-        "tags": ["m&a", "media", "scope_sector"],
+        "source": "Google News 米国株",
+        "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNNHlaYVRJcXVCbEVDdzZDVUx5MGNoQVNiaFE4NGZwY0hYZUt3bENXaFpkd094Y1dBME9GS21qTWZWMG4zMmFYZFNpT0N0LVZ4RFBfcjJRb2RRRmVwUnpGOVN1anZGVm4xNFhHYWlHaDBoc1l3Yi1xYWhfMzRRbnNkM2llT2hrRkk?oc=5",
+        "published_at": "2026-04-24 07:49 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
         "risk_level": "low",
-        "related_assets": ["メディア株"],
+        "related_assets": [
+          "USDJPY"
+        ],
         "category": "us_stock",
         "locale": "jp",
-        "scope": "sector",
-        "significance_score": 108
+        "scope": "macro",
+        "significance_score": 275,
+        "fx_bias": "円高要因"
       },
       {
-        "title": "建築資材販売業者 QXO がビーコンへの敵対的入札を開始",
-        "summary": "個別案件ですが、住宅関連と景気循環株の温度感を見るための補助材料として扱います。",
+        "title": "米国市場データ ＮＹダウは179ドル安と反落 （4月23日） - 株探",
+        "summary": "米国市場データ ＮＹダウは179ドル安と反落 （4月23日） 株探",
         "sentiment": "neutral",
-        "impact": "low",
-        "source": "jp.investing.com",
-        "link": "https://jp.investing.com/news/stock-market-news/article-1502100",
-        "published_at": "2026-04-23 09:10 JST",
-        "tags": ["housing", "cyclical", "scope_single_name"],
+        "impact": "medium",
+        "source": "Google News 米国株",
+        "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBjaG9pdWE4di1oaFZ1NDNUSFBuQmUzVzJMcnRSRHNiWUlkRXRUNU9MWkdDME5jYkYzQmJjcHFZNGZLdWg4ZEFEQjFmTWZTbXBUQkE?oc=5",
+        "published_at": "2026-04-24 07:44 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
         "risk_level": "low",
-        "related_assets": ["住宅関連"],
+        "related_assets": [
+          "USDJPY"
+        ],
         "category": "us_stock",
         "locale": "jp",
-        "scope": "single_name",
-        "significance_score": 62
+        "scope": "macro",
+        "significance_score": 275,
+        "fx_bias": "円高要因"
+      },
+      {
+        "title": "NYダウ179ドル安 IBM決算でソフトウエア株安再燃 - 日本経済新聞",
+        "summary": "NYダウ179ドル安 IBM決算でソフトウエア株安再燃 日本経済新聞",
+        "sentiment": "neutral",
+        "impact": "medium",
+        "source": "Google News 米国株",
+        "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB3U3BvVEphWHNKaWt6UjBCcU44X0FJWE5pMHBXaExSbGRLQVFOLVJ0b0Y1TThqellmQ0ZtTnlyQ28wQWlYZGxkLVVqQWIwT2JuZHd0YTNkaDB1VmFKMzVUNnNKR2R3YjE0UGRGQw?oc=5",
+        "published_at": "2026-04-24 05:20 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "us_stock",
+        "locale": "jp",
+        "scope": "macro",
+        "significance_score": 260,
+        "fx_bias": "円高要因"
+      },
+      {
+        "title": "米国とコロンビアの関税争いでアラビカ種コーヒーの価格が過去最高値に",
+        "summary": "コロンビアに関税と経済制裁を課すというトランプ大統領の脅しをトレーダーらが撤回したことで、アラビカ種コーヒーの価格は記録的な水準に達した。",
+        "sentiment": "negative",
+        "impact": "high",
+        "source": "WSJ Markets",
+        "link": "https://www.wsj.com/articles/arabica-coffee-prices-hit-new-high-on-u-s-colombia-tariff-spat-582446fe?mod=rss_markets_main",
+        "published_at": "2025-01-28 02:20 JST",
+        "tags": [
+          "geopolitics",
+          "oil",
+          "volatility",
+          "scope_macro"
+        ],
+        "risk_level": "high",
+        "related_assets": [
+          "原油",
+          "VIX",
+          "USDJPY"
+        ],
+        "category": "us_stock",
+        "locale": "en",
+        "scope": "macro",
+        "significance_score": 235
+      },
+      {
+        "title": "DeepSeekニュースが安全な避難所を後押しする中、スイスフラン、日本円が上昇",
+        "summary": "中国の新興企業ディープシークの新たなAIモデルが米国のハイテク株に打撃を与えたことを受け、投資家が安全な逃避先を求めたため、円とスイスフランは対ドルで上昇した。",
+        "sentiment": "positive",
+        "impact": "medium",
+        "source": "WSJ Markets",
+        "link": "https://www.wsj.com/articles/safe-haven-currencies-strengthen-amid-fears-over-global-tariffs-9964e17a?mod=rss_markets_main",
+        "published_at": "2025-01-27 23:55 JST",
+        "tags": [
+          "momentum",
+          "fx",
+          "japan",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY",
+          "日経225"
+        ],
+        "category": "us_stock",
+        "locale": "en",
+        "scope": "macro",
+        "significance_score": 235
       }
     ],
     "fx": [
       {
-        "title": "欧米為替見通し: ドル・円は伸び悩みか、原油高・ドル高も160円台にらみ円売り後退",
-        "summary": "ドル高要因と円買い要因が同居していることを素直に示しており、いまのドル円の読み筋そのものです。",
+        "title": "「円安=株高」は本当か 輸出企業の増益と家計を圧迫するインフレの構図",
+        "summary": "今回のニュースのポイント ・為替と株価の相関関係: 日本市場では、特に輸出企業が相場を主導してきた時期には「円安・株高」「円高・株安」の傾向が見られてきた。",
         "sentiment": "neutral",
-        "impact": "high",
-        "source": "zaikei.co.jp",
-        "link": "https://www.zaikei.co.jp/article/20260423/851585.html",
-        "published_at": "2026-04-23 19:17 JST",
-        "tags": ["fx", "usd-jpy", "scope_macro"],
-        "risk_level": "medium",
-        "related_assets": ["USDJPY", "原油"],
+        "impact": "medium",
+        "source": "財経 経済",
+        "link": "https://www.zaikei.co.jp/article/20260324/848031.html",
+        "published_at": "2026-03-24 12:50 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
         "category": "fx",
         "locale": "jp",
         "scope": "macro",
-        "significance_score": 188,
+        "significance_score": 305,
         "fx_bias": "円高要因"
       },
       {
-        "title": "東京為替：ドル・円は小じっかり、原油相場にらみ",
-        "summary": "東京時間の実勢感を示す材料です。原油を見ながらドル円が下がり切らない点は、短期筋の押し目買いも示唆します。",
+        "title": "NY金：弱含みで4724.00ドル、原油先物の続伸を嫌気",
+        "summary": "NY金：弱含みで4724.00ドル、原油先物の続伸を嫌気",
         "sentiment": "neutral",
-        "impact": "medium",
-        "source": "zaikei.co.jp",
-        "link": "https://www.zaikei.co.jp/article/20260423/851560.html",
-        "published_at": "2026-04-23 15:05 JST",
-        "tags": ["fx", "tokyo-session", "scope_macro"],
-        "risk_level": "medium",
-        "related_assets": ["USDJPY", "原油"],
-        "category": "fx",
-        "locale": "jp",
-        "scope": "macro",
-        "significance_score": 160,
-        "fx_bias": "円安要因"
-      },
-      {
-        "title": "【市場反応】米4月PMIは予想以上に上昇、ドルまちまち",
-        "summary": "マクロ指標イベントとしては重要で、ドル全面高ではない点がポイントです。単純な指標サプライズより、その後の値動きの鈍さを重視します。",
-        "sentiment": "neutral",
-        "impact": "medium",
-        "source": "zaikei.co.jp",
-        "link": "https://www.zaikei.co.jp/article/20260423/851540.html",
-        "published_at": "2026-04-23 22:10 JST",
-        "tags": ["pmi", "dollar", "scope_macro"],
-        "risk_level": "medium",
-        "related_assets": ["USDJPY", "米景気"],
-        "category": "fx",
-        "locale": "jp",
-        "scope": "macro",
-        "significance_score": 156,
-        "fx_bias": "円安要因"
-      },
-      {
-        "title": "米イラン戦争、両国が船舶拿捕後、ホルムズ海峡を巡る海上のにらみ合いに発展",
-        "summary": "為替だけでなく原油と株式にも効くため、FX タブでも最上位級です。リスクオフ経由の円買い圧力を意識します。",
-        "sentiment": "negative",
         "impact": "high",
-        "source": "jp.investing.com",
-        "link": "https://jp.investing.com/news/forex-news/article-93CH-1501991",
-        "published_at": "2026-04-23 10:15 JST",
-        "tags": ["geopolitics", "oil", "scope_macro"],
-        "risk_level": "high",
-        "related_assets": ["USDJPY", "原油", "VIX"],
+        "source": "Investing.com FX",
+        "link": "https://jp.investing.com/news/forex-news/article-1503478",
+        "published_at": "2026-04-23 22:45:06",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
         "category": "fx",
         "locale": "jp",
         "scope": "macro",
-        "significance_score": 195,
-        "fx_bias": "円高要因"
+        "significance_score": 300,
+        "fx_bias": "円安要因"
+      },
+      {
+        "title": "NY為替：米イラン協議難航、原油高でドル続伸",
+        "summary": "NY為替：米イラン協議難航、原油高でドル続伸",
+        "sentiment": "neutral",
+        "impact": "high",
+        "source": "Investing.com FX",
+        "link": "https://jp.investing.com/news/forex-news/article-1503376",
+        "published_at": "2026-04-23 21:15:05",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "fx",
+        "locale": "jp",
+        "scope": "macro",
+        "significance_score": 300,
+        "fx_bias": "円安要因"
+      },
+      {
+        "title": "日銀据え置きでも正常化継続 1%視野と家計・企業への影響",
+        "summary": "今回のニュースのポイント: ・現状維持の裏にある姿勢: 政策金利は0.75%で据え置き。",
+        "sentiment": "neutral",
+        "impact": "high",
+        "source": "財経 経済",
+        "link": "https://www.zaikei.co.jp/article/20260320/847719.html",
+        "published_at": "2026-03-20 16:24 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "fx",
+        "locale": "jp",
+        "scope": "macro",
+        "significance_score": 295
+      },
+      {
+        "title": "インフレとは何か お金の価値が目減りする時代の生存戦略",
+        "summary": "今回のニュースのポイント ・通貨の購買力の低下:インフレとは、幅広いモノやサービスの価格水準が一定期間にわたり上昇し、その結果として通貨の購買力が低下していく状態を指します。",
+        "sentiment": "neutral",
+        "impact": "medium",
+        "source": "財経 経済",
+        "link": "https://www.zaikei.co.jp/article/20260326/848422.html",
+        "published_at": "2026-03-26 17:16 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "fx",
+        "locale": "jp",
+        "scope": "macro",
+        "significance_score": 295
+      },
+      {
+        "title": "ドル円午前の為替予想、ドル/円、イラン情勢懸念と介入警戒で神経質な値動き続く 2026/4/24 - 外為どっとコム",
+        "summary": "ドル円午前の為替予想、ドル/円、イラン情勢懸念と介入警戒で神経質な値動き続く 2026/4/24 外為どっとコム",
+        "sentiment": "neutral",
+        "impact": "medium",
+        "source": "Google News FX",
+        "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBxSUhzckFINlJHSm5xVHhPZTFGaVVkRlU3Y3FDRUpiZVhvRGlqT3pWZFl1eW1qRGtaTWgzZGRRZjdXaGpseUd0TUlDTE1ZRU5wYlJqSXJpX3NDWjdZbTdtRjVsQQ?oc=5",
+        "published_at": "2026-04-24 07:34 JST",
+        "tags": [
+          "macro",
+          "scope_benchmark"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "fx",
+        "locale": "jp",
+        "scope": "benchmark",
+        "significance_score": 290
       }
     ],
     "crypto": [
       {
-        "title": "BTC価格が8万ドルに戻らなかった後、ビットコインの週次終値が注目",
-        "summary": "仮想通貨の地合いを見るうえでは最も実務的なニュースです。個別トークン材料より、BTC の週次終値の方が市場全体への説明力があります。",
+        "title": "BTC価格の強気の勢い、ペンタゴン支持のインフレ警告に直面 - CoinDesk",
+        "summary": "BTC価格の強気の勢い、ペンタゴン支持のインフレ警告に直面 CoinDesk",
+        "sentiment": "positive",
+        "impact": "medium",
+        "source": "Google News Crypto",
+        "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZG5JMUczaFdLUlZiUG1HTjhWS2xwY2xnWHMzeDN0Q0FVZXNoMGNRaXRBQTZ4eVRFZkJGbGEzY2NBbTJ5bURIT0s5WXRYM1pMTDBNRmltdFg2MzhGc25QN2xqOHdJX05hdTFSNUZxV2wtODVleHRyWGpyZk5CdHY2WnViTFJhVTBId2M0bDFKTFNmYWttaWNGbWZTTjVVa2tWOWJ3OEp6VmdRNlNMdU1RajdIay1rbVZIWWtjYg?oc=5",
+        "published_at": "2026-04-23 20:19 JST",
+        "tags": [
+          "crypto",
+          "rotation",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "BTC",
+          "ETH",
+          "SOL"
+        ],
+        "category": "crypto",
+        "locale": "jp",
+        "scope": "macro",
+        "significance_score": 310
+      },
+      {
+        "title": "イ・ソンビン、非正規雇用→仮想通貨の世界に飛び込む キム・ヨンデはエリート社員に 韓国ドラマ『月まで行こう』、U-NEXTで配信決定＜キャスト・あらすじ＞ - 山陽新聞デジタル｜…",
+        "summary": "イ・ソンビン、非正規雇用→仮想通貨の世界に飛び込む キム・ヨンデはエリート社員に 韓国ドラマ『月まで行こう』、U-NEXTで配信決定＜キャスト・あらすじ＞ 山陽新聞デジタル｜さんデジ",
         "sentiment": "neutral",
         "impact": "medium",
-        "source": "cointelegraph.com",
-        "link": "https://cointelegraph.com/rss",
-        "published_at": "2026-04-23 08:55 JST",
-        "tags": ["btc", "weekly-close", "scope_macro"],
+        "source": "Google News Crypto",
+        "link": "https://news.google.com/rss/articles/CBMigwNBVV95cUxPX1JPc1J1a0VpN3RicjNBWVV5N05mc3ExcmtFNGVZbW56QmRLbmpZcVZqRDZFcFlfT3dJZVFsVW5scFV3TTBvOVhJdGluYzVNdGVoWTRWbGROSFQ3bHdQSFlEQm9YamlXeE9aa2pUX20xZ0tFSURxdGJOa0VibWpfOEpsRmhzTWFkb3BHNXJSU3lYQy1UNkt5dEppbWlSZkV6Vk1ZX0d5d21ObHp2VnNJM0h3NjkwcXBhZVZEbjF3OGZGdU9GNlU5MnVSX1dJV1E3U21LYlFDdmtoNXNQZmV1M3RGem96RzdpMXRjX01zSU1sSUVzWEhNejNhMnhJeTRZMzNLTm5tNWI4SDl3WXJsQmRfejFNRTlfX1EyQkQyVUhSeGozQndrWGhIZUpNbnZjOTJ2bjg0Uno4eTdwOTEyOGRHdmpYR0hkZ3VnYjh1VmpXSnJuc2x5VWFDc1l4VXNfcDA1NVZkdngzWGxWaUdQM3cwSTJIMHFCUlk3VFRHWFlXS00?oc=5",
+        "published_at": "2026-04-24 02:22 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "crypto",
+        "locale": "jp",
+        "scope": "macro",
+        "significance_score": 250
+      },
+      {
+        "title": "Anchorage Digital、Solana クライアント向けにマリネードを活用したステーキング戦略を追加",
+        "summary": "Marinade Finance との統合により、クライアントは単一プラットフォーム内で保管と制御を維持しながら、バリデータ選択戦略を通じて収益を得ることができます。",
+        "sentiment": "negative",
+        "impact": "high",
+        "source": "Cointelegraph RSS",
+        "link": "https://cointelegraph.com/news/anchorage-digital-brings-automated-solana-staking-to-institutional-clients?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "published_at": "2026-04-24 05:27 JST",
+        "tags": [
+          "rates",
+          "equity",
+          "scope_macro"
+        ],
         "risk_level": "medium",
-        "related_assets": ["BTC", "Fear & Greed"],
+        "related_assets": [
+          "US10Y",
+          "Nasdaq",
+          "USDJPY"
+        ],
         "category": "crypto",
         "locale": "en",
         "scope": "macro",
-        "significance_score": 148
+        "significance_score": 230
       },
       {
-        "title": "OKX、BitGo取引所外決済で米国の推進を加速",
-        "summary": "取引所インフラの話で、直接の価格材料というより機関投資家向け導線の強化として評価します。",
+        "title": "仮想通貨擁護団体は市場構造法案に対する行動が「重要」だと主張",
+        "summary": "暗号通貨およびブロックチェーン業界に関連する120以上の団体が、米国上院議員に暗号通貨市場構造法案の推進を促す書簡に署名した。",
+        "sentiment": "negative",
+        "impact": "high",
+        "source": "Cointelegraph RSS",
+        "link": "https://cointelegraph.com/news/crypto-groups-market-structure-markup-critical?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "published_at": "2026-04-24 02:58 JST",
+        "tags": [
+          "geopolitics",
+          "oil",
+          "volatility",
+          "crypto",
+          "rotation",
+          "scope_macro"
+        ],
+        "risk_level": "high",
+        "related_assets": [
+          "原油",
+          "VIX",
+          "USDJPY",
+          "BTC",
+          "ETH",
+          "SOL"
+        ],
+        "category": "crypto",
+        "locale": "en",
+        "scope": "macro",
+        "significance_score": 230
+      },
+      {
+        "title": "BTCは高値更新後に失速 先物市場ではマグマ蓄積か - bitbank",
+        "summary": "BTCは高値更新後に失速 先物市場ではマグマ蓄積か bitbank",
         "sentiment": "positive",
         "impact": "medium",
-        "source": "cointelegraph.com",
-        "link": "https://cointelegraph.com/rss",
-        "published_at": "2026-04-23 07:45 JST",
-        "tags": ["exchange", "institutional", "scope_sector"],
+        "source": "Google News Crypto",
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9lUURwSFowM2JzeEJrU1BtZUV4SHFXVnFrc0Z6Nmo2U0d4ektPQjl1U3BtMnBFTVBCWU96UlpOVkJyNlBvbmNiWjNJalJTdHFkTlVZZ1lZMUQ2MFR3SXFlNTdoTHYtTTFYdkh2VDJiZ1ZVRWVkZVVYUQ?oc=5",
+        "published_at": "2026-04-23 15:36 JST",
+        "tags": [
+          "crypto",
+          "rotation",
+          "scope_sector"
+        ],
         "risk_level": "low",
-        "related_assets": ["OKX", "BitGo"],
+        "related_assets": [
+          "BTC",
+          "ETH",
+          "SOL"
+        ],
         "category": "crypto",
-        "locale": "en",
+        "locale": "jp",
         "scope": "sector",
-        "significance_score": 112
+        "significance_score": 195
       },
       {
-        "title": "PUSDステーブルコインがADIチェーンに導入され、3兆ドルのイスラム金融市場をターゲットに",
-        "summary": "中長期テーマとしては面白いですが、短期相場全体への波及は限定的です。採用ニュースとしては補助線扱いです。",
-        "sentiment": "positive",
-        "impact": "low",
-        "source": "cointelegraph.com",
-        "link": "https://cointelegraph.com/rss",
-        "published_at": "2026-04-23 05:10 JST",
-        "tags": ["stablecoin", "adoption", "scope_sector"],
-        "risk_level": "low",
-        "related_assets": ["PUSD"],
+        "title": "マクロ圧力の中で世界の仮想通貨導入が低迷、トルコは下降傾向に逆らう",
+        "summary": "TRM Labsのデータによると、トルコと新興国経済は回復力を示したものの、マクロ圧力が市場に重しとなり、第1四半期の小売仮想通貨取引は11%減少した。",
+        "sentiment": "negative",
+        "impact": "medium",
+        "source": "Cointelegraph RSS",
+        "link": "https://cointelegraph.com/news/global-crypto-adoption-q1-2026-trm-labs-turkey-resilience?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+        "published_at": "2026-04-24 06:21 JST",
+        "tags": [
+          "pressure",
+          "crypto",
+          "rotation",
+          "scope_benchmark"
+        ],
+        "risk_level": "medium",
+        "related_assets": [
+          "BTC",
+          "ETH",
+          "SOL"
+        ],
         "category": "crypto",
         "locale": "en",
-        "scope": "sector",
-        "significance_score": 86
+        "scope": "benchmark",
+        "significance_score": 180
       }
     ],
     "bond": [
       {
-        "title": "最新のインフレ統計があなたに与える 3 つの影響",
-        "summary": "債券タブではこれが中心材料です。インフレ統計の再評価は金利の高止まりと株式のディスカウント率上昇に直結します。",
-        "sentiment": "negative",
-        "impact": "high",
-        "source": "feeds.bbci.co.uk",
-        "link": "https://feeds.bbci.co.uk/news/business/rss.xml",
-        "published_at": "2026-04-23 09:40 JST",
-        "tags": ["inflation", "rates", "scope_macro"],
-        "risk_level": "medium",
-        "related_assets": ["US10Y", "CPI"],
-        "category": "bond",
-        "locale": "en",
-        "scope": "macro",
-        "significance_score": 172
-      },
-      {
-        "title": "イラン戦争で燃料価格が高騰、英国のインフレ率が上昇",
-        "summary": "エネルギー価格経由でインフレが再加速する構図を示しています。債券売り圧力の再点火要因として重要です。",
-        "sentiment": "negative",
-        "impact": "high",
-        "source": "feeds.bbci.co.uk",
-        "link": "https://feeds.bbci.co.uk/news/business/rss.xml",
-        "published_at": "2026-04-23 08:50 JST",
-        "tags": ["oil", "inflation", "scope_macro"],
-        "risk_level": "high",
-        "related_assets": ["原油", "債券利回り"],
-        "category": "bond",
-        "locale": "en",
-        "scope": "macro",
-        "significance_score": 178
-      },
-      {
-        "title": "[JSCC]日本国債（JGB）を活用したデジタル担保管理の実証実験を開始",
-        "summary": "価格材料というより市場基盤整備のニュースですが、日本国債周辺の実務には意味があるためタブ内に残します。",
+        "title": "海外旅行は「今でしょ｣ GW予約好調、先行き不透明・インフレに焦燥感 - 日本経済新聞",
+        "summary": "海外旅行は「今でしょ｣ GW予約好調、先行き不透明・インフレに焦燥感 日本経済新聞",
         "sentiment": "neutral",
-        "impact": "low",
-        "source": "www.jpx.co.jp",
-        "link": "https://www.jpx.co.jp/rss/jpx-news.xml",
-        "published_at": "2026-04-23 13:00 JST",
-        "tags": ["jgb", "market-infra", "scope_sector"],
+        "impact": "medium",
+        "source": "Google News Bond",
+        "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9qellhWmJKVXBuZFV4V0Zpa1psN1UxVnVSWjBRM0RpQ1NCZDdjdUozLUx4OUQyVTZNbllmcjFnQnBrRl9fTVFmUE9Ya294bGE5clFiUG1PR2RaU0JVNUtpYWY5V2VDUDgzZm1TQg?oc=5",
+        "published_at": "2026-04-24 05:00 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
         "risk_level": "low",
-        "related_assets": ["JGB"],
+        "related_assets": [
+          "USDJPY"
+        ],
         "category": "bond",
         "locale": "jp",
-        "scope": "sector",
-        "significance_score": 84
+        "scope": "macro",
+        "significance_score": 310
+      },
+      {
+        "title": "【日本国債、金利上昇で大注目】いま買うなら個人向け国債か新窓販国債か…貯金だけではない安全資産の作り方 - JBpress",
+        "summary": "【日本国債、金利上昇で大注目】いま買うなら個人向け国債か新窓販国債か…貯金だけではない安全資産の作り方 JBpress",
+        "sentiment": "neutral",
+        "impact": "high",
+        "source": "Google News Bond",
+        "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1mc09mRklKNE8yQU1qNHRydEpXOTVrTEVJUjU0OUlZR2M4Wm05NkZKRVE1UTNOTHFDSnR4cVE1ZldqTFlIbi1KU01kYXpHOTNRa182a0Zn?oc=5",
+        "published_at": "2026-04-23 06:00 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "bond",
+        "locale": "jp",
+        "scope": "macro",
+        "significance_score": 300
+      },
+      {
+        "title": "米国債市場概況・23日 10年物国債利回り、4.32％に上昇(トレーダーズ・ウェブ) - Yahoo!ファイナンス",
+        "summary": "米国債市場概況・23日 10年物国債利回り、4.32％に上昇(トレーダーズ・ウェブ) Yahoo!ファイナンス",
+        "sentiment": "neutral",
+        "impact": "medium",
+        "source": "Google News Bond",
+        "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOVXFwVGVvSERuYno5eng3WGlOSVN1S2huZFZnZ2p5ZGR2bHRIMDAydDR2Y3o3Q0F4WU1ZNks2emwycVlaV1lNeDNtZ3daLVVZZmJZeEk4clF2bDRSRVFDRXBoTnFFeEd2MzlnOVphSkpmNEhmRklldjZPMHk0MzFVWUh2R1V2Szg?oc=5",
+        "published_at": "2026-04-24 06:09 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "bond",
+        "locale": "jp",
+        "scope": "macro",
+        "significance_score": 300
+      },
+      {
+        "title": "日本国債に1兆円単位で投資、残高は数千億円増加＝明治安田生命・26年度運用計画 - Reuters",
+        "summary": "日本国債に1兆円単位で投資、残高は数千億円増加＝明治安田生命・26年度運用計画 Reuters",
+        "sentiment": "neutral",
+        "impact": "medium",
+        "source": "Google News Bond",
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9iTnpYN0QxZjhncklSWm9zVEc4QWtjWVBlalhPcDNqVEJHQVFodEMzWmxlTnVZc054ZFlfMGVlZlJ6MWZoeDBIc2ZCOGFWaHE4SlpuaFUza2paRGpNYmlFTUNkZ3lEQWR6VkItRDl3ODRKVE9yZ2dwMw?oc=5",
+        "published_at": "2026-04-23 15:04 JST",
+        "tags": [
+          "macro",
+          "scope_macro"
+        ],
+        "risk_level": "low",
+        "related_assets": [
+          "USDJPY"
+        ],
+        "category": "bond",
+        "locale": "jp",
+        "scope": "macro",
+        "significance_score": 275
+      },
+      {
+        "title": "最新のインフレ統計があなたに与える 3 つの影響",
+        "summary": "インフレはどこまで上昇する可能性があるのでしょうか？そして、それは全国の借り手や貯蓄者にとって何を意味するのでしょうか?",
+        "sentiment": "negative",
+        "impact": "high",
+        "source": "BBC Business",
+        "link": "https://www.bbc.com/news/articles/c75k002qkzno?at_medium=RSS&at_campaign=rss",
+        "published_at": "2026-04-22 20:39 JST",
+        "tags": [
+          "rates",
+          "equity",
+          "scope_macro"
+        ],
+        "risk_level": "medium",
+        "related_assets": [
+          "US10Y",
+          "Nasdaq",
+          "USDJPY"
+        ],
+        "category": "bond",
+        "locale": "en",
+        "scope": "macro",
+        "significance_score": 275
+      },
+      {
+        "title": "企業が関税還付請求を急ぐ中、エイソスは米国に700万ポンドを要求",
+        "summary": "関税撤廃後は数十万の企業が資金を取り戻す可能性がある。",
+        "sentiment": "negative",
+        "impact": "high",
+        "source": "BBC Business",
+        "link": "https://www.bbc.com/news/articles/cd0r9d5zrkno?at_medium=RSS&at_campaign=rss",
+        "published_at": "2026-04-23 19:05 JST",
+        "tags": [
+          "geopolitics",
+          "oil",
+          "volatility",
+          "scope_macro"
+        ],
+        "risk_level": "high",
+        "related_assets": [
+          "原油",
+          "VIX",
+          "USDJPY"
+        ],
+        "category": "bond",
+        "locale": "en",
+        "scope": "macro",
+        "significance_score": 215
       }
     ]
   }

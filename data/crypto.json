@@ -1,18 +1,17 @@
 {
-  "updated_at": "2026-04-24 01:48 JST",
+  "updated_at": "2026-04-24 09:12 JST",
   "category": "crypto",
   "items": [
     {
       "symbol": "BTCUSDT",
       "name": "Bitcoin",
-      "price": 78339.0,
-      "display_price": "78,339",
-      "change_pct": -0.5949522891076988,
-      "high": 79164.0,
-      "low": 77174.0,
+      "price": 78302.0,
+      "display_price": "78,302",
+      "change_pct": 0.41182090394393395,
+      "high": 78662.0,
+      "low": 76960.0,
       "decimals": 0,
       "sparkline": [
-        89225.34,
         86670.36,
         88347.08,
         89250.0,
@@ -101,25 +100,25 @@
         75840.97,
         76336.15,
         78178.23,
-        78339.13
+        78257.48,
+        78301.65
       ],
       "currency": "USDT",
-      "change_1h_pct": -0.04802443377036259,
-      "change_24h_pct": -0.595,
-      "volume_change_pct": -20.4416302481317,
-      "pump_score": -4.29
+      "change_1h_pct": 0.05642911067415344,
+      "change_24h_pct": 0.412,
+      "volume_change_pct": -2.1196614900502455,
+      "pump_score": -0.27
     },
     {
       "symbol": "ETHUSDT",
       "name": "Ethereum",
-      "price": 2330.0,
-      "display_price": "2,330",
-      "change_pct": -2.5226431275754484,
-      "high": 2407.0,
-      "low": 2306.0,
+      "price": 2332.0,
+      "display_price": "2,332",
+      "change_pct": -1.2419177954582954,
+      "high": 2382.0,
+      "low": 2285.0,
       "decimals": 0,
       "sparkline": [
-        2953.22,
         2816.89,
         2930.35,
         3026.77,
@@ -208,25 +207,25 @@
         2313.85,
         2327.14,
         2374.07,
-        2330.05
+        2330.26,
+        2332.33
       ],
       "currency": "USDT",
-      "change_1h_pct": -0.13757575238079064,
-      "change_24h_pct": -2.522,
-      "volume_change_pct": -17.4795216923858,
-      "pump_score": -4.32
+      "change_1h_pct": 0.08883090800637539,
+      "change_24h_pct": -1.242,
+      "volume_change_pct": -4.071150010851838,
+      "pump_score": -1.14
     },
     {
       "symbol": "SOLUSDT",
       "name": "Solana",
-      "price": 86.07,
-      "display_price": "86.07",
-      "change_pct": -1.9592208679804226,
-      "high": 88.37,
-      "low": 85.2,
+      "price": 86.11,
+      "display_price": "86.11",
+      "change_pct": -0.47387887193712047,
+      "high": 87.18,
+      "low": 84.48,
       "decimals": 2,
       "sparkline": [
-        127.21,
         118.85,
         124.24,
         127.19,
@@ -315,25 +314,25 @@
         85.28,
         86.03,
         86.87,
-        86.07
+        86.12,
+        86.11
       ],
       "currency": "USDT",
-      "change_1h_pct": -0.3358036127837034,
-      "change_24h_pct": -1.948,
-      "volume_change_pct": -26.47632635092559,
-      "pump_score": -6.05
+      "change_1h_pct": -0.01161170459824096,
+      "change_24h_pct": -0.485,
+      "volume_change_pct": -0.8250737386117183,
+      "pump_score": -0.32
     },
     {
       "symbol": "LINKUSDT",
       "name": "Chainlink",
-      "price": 9.32,
-      "display_price": "9.32",
-      "change_pct": -1.2711864406779578,
-      "high": 9.49,
+      "price": 9.37,
+      "display_price": "9.37",
+      "change_pct": 1.1879049676025857,
+      "high": 9.39,
       "low": 9.14,
       "decimals": 2,
       "sparkline": [
-        12.2,
         11.52,
         11.95,
         12.03,
@@ -422,30 +421,31 @@
         9.29,
         9.4,
         9.29,
-        9.32
+        9.35,
+        9.37
       ],
       "currency": "USDT",
-      "change_1h_pct": -0.3208556149732552,
-      "change_24h_pct": -1.166,
-      "volume_change_pct": -15.70128749585754,
-      "pump_score": -3.65
+      "change_1h_pct": 0.21390374331550346,
+      "change_24h_pct": 1.188,
+      "volume_change_pct": -1.006448429651557,
+      "pump_score": 0.26
     }
   ],
   "top_pumps": [
     {
       "symbol": "LINKUSDT",
       "name": "Chainlink",
-      "pump_score": -3.65
+      "pump_score": 0.26
     },
     {
       "symbol": "BTCUSDT",
       "name": "Bitcoin",
-      "pump_score": -4.29
+      "pump_score": -0.27
     },
     {
-      "symbol": "ETHUSDT",
-      "name": "Ethereum",
-      "pump_score": -4.32
+      "symbol": "SOLUSDT",
+      "name": "Solana",
+      "pump_score": -0.32
     }
   ]
 }

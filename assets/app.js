@@ -226,6 +226,45 @@ function buildPairStrip(summary) {
   return chips.map((chip, index) => `<span class="asset-chip${index === 0 ? " is-active" : ""}">${chip}</span>`).join("");
 }
 
+function percentOrDash(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return "--";
+  return `${formatNumber(value, 1)}%`;
+}
+
+function buildIntelBoard(summary) {
+  const intel = summary.market_overview?.intel || {};
+  const pizza = intel.pizza_meter || {};
+  const poly = intel.polymarket_iran || {};
+  const pizzaSpot = pizza.top_spot
+    ? `${pizza.top_spot}${pizza.top_spot_pct ? ` ${pizza.top_spot_pct}%` : ""}`
+    : "取得失敗";
+
+  return `
+    <div class="section-header">
+      <div>
+        <div class="section-title">SIGNAL BOARD</div>
+        <div class="section-subtitle">地政学オルタナ指標</div>
+      </div>
+    </div>
+    <div class="intel-grid">
+      <article class="intel-card">
+        <div class="intel-label">PENTAGON PIZZA METER</div>
+        <div class="intel-main">${pizza.status || "N/A"} / ${pizza.score ?? "--"}</div>
+        <div class="intel-meta">ピーク観測: ${pizzaSpot}</div>
+        <div class="intel-meta">Active spikes: ${pizza.active_spikes ?? "--"}</div>
+      </article>
+      <article class="intel-card">
+        <div class="intel-label">POLYMARKET / IRAN</div>
+        <div class="intel-list">
+          <div><span>恒久和平</span><strong>${percentOrDash(poly.peace_deal_yes)}</strong></div>
+          <div><span>外交会談</span><strong>${percentOrDash(poly.diplomatic_meeting_yes)}</strong></div>
+          <div><span>ホルムズ正常化</span><strong>${percentOrDash(poly.hormuz_normal_yes)}</strong></div>
+        </div>
+      </article>
+    </div>
+  `;
+}
+
 function buildSummaryQuote(fxData) {
   const item = (fxData.items || [])[0];
   if (!item) return `<div class="empty-state">為替データなし</div>`;
@@ -387,6 +426,7 @@ function renderWatchlist(data) {
 function renderSummary(summary, fxData) {
   document.getElementById("updatedAtLine").textContent = `最終更新 ${summary.updated_at}`;
   document.getElementById("riskCard").innerHTML = buildRiskCard(summary);
+  document.getElementById("intelBoard").innerHTML = buildIntelBoard(summary);
   document.getElementById("globalSummary").innerHTML = buildBriefCard(summary);
   document.getElementById("pairStrip").innerHTML = buildPairStrip(summary);
   document.getElementById("summaryQuote").innerHTML = buildSummaryQuote(fxData);
