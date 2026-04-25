@@ -459,6 +459,171 @@ a {
   color: #d8d2c3;
 }
 
+/* 重要ニュースを読みやすくするための上書き */
+.app-shell {
+  width: min(500px, calc(100vw - 18px));
+  padding-top: 12px;
+}
+
+.panel.is-active {
+  gap: 12px;
+}
+
+.hero {
+  padding: 14px 12px 12px;
+}
+
+.hero-title {
+  font-size: 1.38rem;
+  line-height: 1.16;
+}
+
+.hero-updated {
+  margin-top: 7px;
+  font-size: 0.62rem;
+}
+
+.hero-version {
+  color: #9ba09c;
+  font-size: 0.66rem;
+}
+
+.tabs {
+  gap: 5px;
+  margin: 10px 0 12px;
+}
+
+.tab-button {
+  min-height: 36px;
+  padding: 7px 3px;
+  font-size: 0.68rem;
+}
+
+.brief-card,
+.quote-panel,
+.solid-panel,
+.today-note,
+.category-hero,
+.risk-card {
+  padding: 12px;
+}
+
+.section-title {
+  font-size: 0.68rem;
+}
+
+.section-subtitle {
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+.brief-card h2 {
+  font-size: 1.12rem;
+  line-height: 1.42;
+}
+
+.brief-copy {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.risk-grid {
+  gap: 6px;
+}
+
+.risk-metric {
+  padding: 9px 7px;
+}
+
+.risk-metric strong {
+  font-size: 0.96rem;
+  line-height: 1.25;
+}
+
+.news-list {
+  gap: 10px;
+}
+
+.news-card {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid var(--yellow);
+}
+
+.news-card.impact-high {
+  border-left-color: var(--red);
+}
+
+.news-card.impact-medium {
+  border-left-color: var(--yellow);
+}
+
+.news-card.impact-low {
+  border-left-color: var(--cyan);
+}
+
+.news-header {
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.news-icon {
+  min-width: 34px;
+  width: 34px;
+  height: 34px;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.news-body {
+  min-width: 0;
+}
+
+.news-chips {
+  gap: 5px;
+  margin-bottom: 6px;
+}
+
+.news-chip,
+.fx-chip,
+.metric-chip,
+.asset-chip,
+.tag {
+  padding: 4px 7px;
+  font-size: 0.66rem;
+  line-height: 1.2;
+}
+
+.news-card h3 {
+  font-size: 0.98rem;
+  line-height: 1.48;
+}
+
+.impact-note {
+  margin: 8px 0 7px;
+  padding: 8px;
+  border: 1px solid rgba(138, 240, 167, 0.18);
+  background: rgba(138, 240, 167, 0.055);
+  color: #d9e7d7;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.news-card p {
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.news-meta {
+  margin-top: 9px;
+  gap: 5px;
+  font-size: 0.66rem;
+}
+
+.news-tags {
+  display: none;
+}
+
 .positive {
   color: var(--green);
 }

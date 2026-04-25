@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MARKET_DASHBOARD</title>
-  <meta name="description" content="実ニュースと実価格を集約した静的マーケットダッシュボード。">
+  <meta name="description" content="重要ニュース、価格、リスク指標をまとめた静的マーケットダッシュボード">
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
@@ -13,36 +13,30 @@
       <div class="hero-kicker"><span class="dot"></span> MARKET_DASHBOARD</div>
       <h1 class="hero-title">MARKET_DASHBOARD</h1>
       <p class="hero-updated" id="updatedAtLine">最終更新 --</p>
-      <div class="hero-version">v4.2</div>
+      <div class="hero-version">重要ニュースと市場インパクト</div>
     </header>
 
     <nav class="tabs" id="tabs" aria-label="dashboard tabs"></nav>
 
     <main id="views">
       <section class="panel is-active" data-tab="summary">
-        <section class="risk-card" id="riskCard"></section>
-
-        <section class="solid-panel" id="intelBoard"></section>
-
         <section class="brief-card" id="globalSummary"></section>
-
+        <section class="risk-card" id="riskCard"></section>
+        <section class="solid-panel" id="intelBoard"></section>
         <section class="pair-strip" id="pairStrip"></section>
-
         <section class="quote-panel">
           <div class="section-title">USD/JPY</div>
           <div class="quote-main" id="summaryQuote"></div>
         </section>
-
         <section class="solid-panel">
           <div class="section-header">
             <div>
-              <div class="section-title">MARKET MOVERS</div>
-              <div class="section-subtitle">市場全体に影響が大きいニュース</div>
+              <div class="section-title">IMPORTANT NEWS</div>
+              <div class="section-subtitle">市場全体への影響が大きいものだけを表示</div>
             </div>
           </div>
           <div id="newsList" class="news-list"></div>
         </section>
-
         <section class="today-note" id="todayNote"></section>
       </section>
 
@@ -50,13 +44,13 @@
         <section class="category-hero">
           <div class="section-title">JP STOCK</div>
           <h2>日本株</h2>
-          <p>国内株に特化したニュースと価格モニター</p>
+          <p>日経平均、TOPIX、国内大型株に影響するニュースを優先表示</p>
         </section>
         <section class="solid-panel">
           <div class="section-header">
             <div>
-              <div class="section-title">HEADLINES</div>
-              <div class="section-subtitle">日本株に特化したニュース</div>
+              <div class="section-title">IMPORTANT NEWS</div>
+              <div class="section-subtitle">日本株へのインパクト順</div>
             </div>
           </div>
           <div id="jpStockNews" class="news-list"></div>
@@ -65,7 +59,7 @@
           <div class="section-header">
             <div>
               <div class="section-title">PRICE MONITOR</div>
-              <div class="section-subtitle">90日推移</div>
+              <div class="section-subtitle">主要銘柄と90日推移</div>
             </div>
           </div>
           <div class="market-grid" id="jpStockGrid"></div>
@@ -76,13 +70,13 @@
         <section class="category-hero">
           <div class="section-title">US STOCK</div>
           <h2>米国株</h2>
-          <p>米国指数と大型株の材料を集約</p>
+          <p>米指数、金利、ハイテク大型株に影響するニュースを優先表示</p>
         </section>
         <section class="solid-panel">
           <div class="section-header">
             <div>
-              <div class="section-title">HEADLINES</div>
-              <div class="section-subtitle">米国株に特化したニュース</div>
+              <div class="section-title">IMPORTANT NEWS</div>
+              <div class="section-subtitle">米国株へのインパクト順</div>
             </div>
           </div>
           <div id="usStockNews" class="news-list"></div>
@@ -91,7 +85,7 @@
           <div class="section-header">
             <div>
               <div class="section-title">PRICE MONITOR</div>
-              <div class="section-subtitle">90日推移</div>
+              <div class="section-subtitle">主要銘柄と90日推移</div>
             </div>
           </div>
           <div class="market-grid" id="usStockGrid"></div>
@@ -102,13 +96,13 @@
         <section class="category-hero">
           <div class="section-title">FX</div>
           <h2>為替</h2>
-          <p>ドル円中心の方向感と材料を整理</p>
+          <p>ドル円を中心に、円高要因と円安要因をチップで表示</p>
         </section>
         <section class="solid-panel">
           <div class="section-header">
             <div>
-              <div class="section-title">HEADLINES</div>
-              <div class="section-subtitle">為替に特化したニュース</div>
+              <div class="section-title">IMPORTANT NEWS</div>
+              <div class="section-subtitle">為替へのインパクト順</div>
             </div>
           </div>
           <div id="fxNews" class="news-list"></div>
@@ -128,7 +122,7 @@
         <section class="category-hero">
           <div class="section-title">CRYPTO</div>
           <h2>仮想通貨</h2>
-          <p>主要ニュースとパンプ検知を表示</p>
+          <p>BTC、ETH、規制、ETF、資金フローに関するニュースを優先表示</p>
         </section>
         <section class="solid-panel pump-panel">
           <div class="section-header">
@@ -142,8 +136,8 @@
         <section class="solid-panel">
           <div class="section-header">
             <div>
-              <div class="section-title">HEADLINES</div>
-              <div class="section-subtitle">仮想通貨に特化したニュース</div>
+              <div class="section-title">IMPORTANT NEWS</div>
+              <div class="section-subtitle">仮想通貨へのインパクト順</div>
             </div>
           </div>
           <div id="cryptoNews" class="news-list"></div>
@@ -163,13 +157,13 @@
         <section class="category-hero">
           <div class="section-title">BOND</div>
           <h2>債券</h2>
-          <p>金利とマクロ材料の監視用</p>
+          <p>米国債、日本国債、金利見通しに影響するニュースを優先表示</p>
         </section>
         <section class="solid-panel">
           <div class="section-header">
             <div>
-              <div class="section-title">HEADLINES</div>
-              <div class="section-subtitle">債券に特化したニュース</div>
+              <div class="section-title">IMPORTANT NEWS</div>
+              <div class="section-subtitle">債券・金利へのインパクト順</div>
             </div>
           </div>
           <div id="bondNews" class="news-list"></div>
@@ -189,7 +183,7 @@
         <section class="category-hero">
           <div class="section-title">WATCHLIST</div>
           <h2>ウォッチリスト</h2>
-          <p>将来的に編集可能な構造</p>
+          <p>将来的にUI編集できる形式の監視リスト</p>
         </section>
         <div class="watchlist-grid" id="watchlistGrid"></div>
       </section>

@@ -1,11 +1,11 @@
 const TAB_DEFS = [
-  { key: "summary", label: "📰 市場" },
-  { key: "jp_stock", label: "🇯🇵 国内株" },
-  { key: "us_stock", label: "🇺🇸 米国株" },
-  { key: "fx", label: "📊 為替" },
-  { key: "crypto", label: "🪙 仮想通貨" },
-  { key: "bond", label: "🏦 債券" },
-  { key: "watchlist", label: "🏠 監視" }
+  { key: "summary", label: "市場" },
+  { key: "jp_stock", label: "日本株" },
+  { key: "us_stock", label: "米国株" },
+  { key: "fx", label: "為替" },
+  { key: "crypto", label: "仮想通貨" },
+  { key: "bond", label: "債券" },
+  { key: "watchlist", label: "監視" }
 ];
 
 const DATA_FILES = {
@@ -20,57 +20,24 @@ const DATA_FILES = {
 
 const FALLBACK_DATA = {
   summary: {
-    updated_at: "2026-04-24 00:59 JST",
+    updated_at: "未取得",
     market_overview: {
-      risk_mode: "Risk Off 寄り",
-      macro_tone: "原油高・金利高・ドル高を軸にした相場",
-      geopolitical_risk: "high",
-      related_assets: {
-        oil: "WTI 83.20 (+1.4%)",
-        vix: "18.29",
-        usdjpy: "159.24",
-        fear_greed: "46 (Fear)"
-      }
+      risk_mode: "判定待ち",
+      macro_tone: "データ取得に失敗しました。生成スクリプトを再実行してください。",
+      geopolitical_risk: "medium",
+      related_assets: { oil: "--", vix: "--", usdjpy: "--", fear_greed: "--" }
     },
     ai_summary: {
       global: {
-        main_theme: "米イラン情勢と原油高で円高方向、159円台前半",
-        rise_factors: "原油高、地政学リスク、ボラティリティ上昇",
-        fall_factors: "景気懸念、インフレ警戒、金利高止まり",
-        risk_on_off: "リスクオフ寄り",
-        focus_points: "原油、VIX、USDJPY、米金利",
-        jp_swing_hint: "輸出と内需のどちらが優位かを寄り前に確認",
-      },
-      categories: {
-        jp_stock: { label: "日本株", main_theme: "日経平均は原油高と円高警戒で重い", rise_factors: "防衛・資源", fall_factors: "半導体・輸出", focus_points: "日経平均とTOPIXの乖離", jp_swing_hint: "" },
-        us_stock: { label: "米国株", main_theme: "金利高がグロースに逆風", rise_factors: "ディフェンシブ", fall_factors: "高PER株", focus_points: "10年債利回り", jp_swing_hint: "" },
-        fx: { label: "為替", main_theme: "ドル円は159円台前半でもみ合い", rise_factors: "ドル高要因", fall_factors: "円買い要因", focus_points: "介入警戒", jp_swing_hint: "" },
-        crypto: { label: "仮想通貨", main_theme: "BTCはセンチメント悪化でも底堅い", rise_factors: "短期反発", fall_factors: "リスク資産全体の重さ", focus_points: "Fear & Greed", jp_swing_hint: "" },
-        bond: { label: "債券", main_theme: "金利高止まりが株に圧力", rise_factors: "短期金利", fall_factors: "長期債価格", focus_points: "米10年", jp_swing_hint: "" }
+        main_theme: "市場データを読み込み中",
+        fall_factors: "未取得",
+        risk_on_off: "判定待ち",
+        focus_points: "JSONを確認してください。",
+        jp_swing_hint: "データ取得後に表示します。"
       }
     },
-    news: [
-      {
-        title: "米イラン情勢と原油高で円高方向、159円台前半",
-        summary: "原油高と中東リスクを背景に円買いが入りやすい構図です。ドル円は159円台前半で方向感を探る展開です。",
-        sentiment: "negative",
-        impact: "high",
-        source: "Fallback Desk",
-        link: "#",
-        published_at: "2026-04-24 00:59 JST",
-        tags: ["geopolitics", "scope_macro"],
-        risk_level: "high",
-        related_assets: ["原油", "VIX", "USDJPY"],
-        category: "fx"
-      }
-    ],
-    category_news: {
-      jp_stock: [],
-      us_stock: [],
-      fx: [],
-      crypto: [],
-      bond: []
-    }
+    news: [],
+    category_news: { jp_stock: [], us_stock: [], fx: [], crypto: [], bond: [] }
   },
   jp_stock: { items: [] },
   us_stock: { items: [] },
@@ -80,44 +47,90 @@ const FALLBACK_DATA = {
   watchlist: { items: [] }
 };
 
+const IMPACT_TEXT = { high: "影響大", medium: "影響中", low: "影響小" };
+const SENTIMENT_TEXT = { positive: "上昇要因", negative: "下落要因", neutral: "中立" };
+const CATEGORY_TEXT = {
+  jp_stock: "日本株",
+  us_stock: "米国株",
+  fx: "為替",
+  crypto: "仮想通貨",
+  bond: "債券"
+};
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
 function formatNumber(value, digits = 2) {
-  return Number(value).toLocaleString("ja-JP", {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "--";
+  return number.toLocaleString("ja-JP", {
     minimumFractionDigits: digits,
     maximumFractionDigits: digits
   });
 }
 
 function formatPercent(value) {
-  const sign = value > 0 ? "+" : "";
-  return `${sign}${formatNumber(value, 2)}%`;
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "--";
+  const sign = number > 0 ? "+" : "";
+  return `${sign}${formatNumber(number, 2)}%`;
+}
+
+function shortText(value, maxLength = 84) {
+  const text = String(value ?? "").replace(/\s+/g, " ").trim();
+  if (!text) return "";
+  return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
 }
 
 function toneClassFromNumber(value) {
-  if (value > 0) return "positive";
-  if (value < 0) return "negative";
+  const number = Number(value);
+  if (number > 0) return "positive";
+  if (number < 0) return "negative";
   return "neutral";
 }
 
-function sentimentLabel(value) {
-  if (value === "positive") return "強気";
-  if (value === "negative") return "弱気";
-  return "中立";
+function sentimentClass(value) {
+  if (value === "positive") return "positive";
+  if (value === "negative") return "negative";
+  return "neutral";
 }
 
-function impactLabel(value) {
-  if (value === "high") return "影響大";
-  if (value === "medium") return "影響中";
-  return "影響小";
+function impactClass(value) {
+  if (value === "high") return "impact-high";
+  if (value === "medium") return "impact-medium";
+  return "impact-low";
 }
 
 function iconForNews(item) {
   const tags = item.tags || [];
-  if (tags.includes("geopolitics")) return "🛰";
-  if (tags.includes("oil")) return "🛢";
-  if (tags.includes("volatility")) return "📉";
-  if (tags.includes("rates")) return "🏦";
-  if (tags.includes("crypto")) return "₿";
-  return "△";
+  if (tags.includes("geopolitics")) return "⚠";
+  if (tags.includes("oil")) return "油";
+  if (tags.includes("volatility")) return "VIX";
+  if (tags.includes("rates")) return "金利";
+  if (tags.includes("crypto")) return "BTC";
+  if (item.category === "fx") return "円";
+  return "株";
+}
+
+function directionText(item) {
+  if (item.category === "fx" && item.fx_bias) return item.fx_bias;
+  return SENTIMENT_TEXT[item.sentiment] || "中立";
+}
+
+function impactNote(item) {
+  const assets = (item.related_assets || []).slice(0, 3).join(" / ");
+  const category = CATEGORY_TEXT[item.category] || "市場";
+  const impact = IMPACT_TEXT[item.impact] || "影響中";
+  const direction = directionText(item);
+  if (assets) return `${category}に${impact}。主な影響先は ${assets}。方向性は「${direction}」。`;
+  return `${category}に${impact}。方向性は「${direction}」。`;
 }
 
 function renderSparkline(points, color) {
@@ -164,66 +177,58 @@ function switchTab(tabKey) {
   });
 }
 
-function buildRiskCard(summary) {
-  const related = summary.market_overview.related_assets || {};
-  const news = summary.news || [];
-  const lead = news[0];
-  const impact = lead ? impactLabel(lead.impact) : "影響中";
-  return `
-    <div class="risk-top">
-      <div>
-        <div class="risk-title">地政学リスク / マクロ警戒</div>
-        <div class="section-subtitle">${summary.market_overview.macro_tone}</div>
-      </div>
-      <div class="news-chip status-high">${impact}</div>
-    </div>
-    <div class="risk-grid">
-      <div class="risk-metric"><span>市場ムード</span><strong class="negative">${summary.market_overview.risk_mode}</strong></div>
-      <div class="risk-metric"><span>Fear & Greed</span><strong>${related.fear_greed || "N/A"}</strong></div>
-      <div class="risk-metric"><span>地政学</span><strong class="status-high">${String(summary.market_overview.geopolitical_risk || "").toUpperCase()}</strong></div>
-    </div>
-    <div class="risk-linked">
-      <span class="metric-chip">VIX ${related.vix || "--"}</span>
-      <span class="metric-chip">WTI ${related.oil || "--"}</span>
-      <span class="metric-chip">USD/JPY ${related.usdjpy || "--"}</span>
-    </div>
-    <div class="risk-footer">
-      <div>
-        <div class="section-title">主要テーマ</div>
-        <p>${lead ? lead.title : "主要テーマなし"}</p>
-      </div>
-      <div class="status-high">${summary.market_overview.geopolitical_risk === "high" ? "HIGH" : "MID"}</div>
-    </div>
-  `;
-}
-
 function buildBriefCard(summary) {
-  const global = summary.ai_summary.global;
+  const global = summary.ai_summary?.global || {};
   return `
     <div class="section-header">
       <div>
         <div class="section-title">TODAY'S BRIEF</div>
-        <div class="section-subtitle">市場全体の要点</div>
+        <div class="section-subtitle">まず見るべき市場テーマ</div>
       </div>
     </div>
-    <h2>${global.main_theme}</h2>
+    <h2>${escapeHtml(shortText(global.main_theme, 72))}</h2>
+    <p class="brief-copy">${escapeHtml(shortText(global.focus_points, 120))}</p>
     <div class="brief-tags">
-      <span class="news-chip negative">↓ ${global.fall_factors}</span>
-      <span class="news-chip neutral">${global.risk_on_off}</span>
+      <span class="news-chip negative">下落要因: ${escapeHtml(shortText(global.fall_factors, 36))}</span>
+      <span class="news-chip neutral">${escapeHtml(shortText(global.risk_on_off, 28))}</span>
     </div>
-    <p class="brief-copy">${global.focus_points}</p>
+  `;
+}
+
+function buildRiskCard(summary) {
+  const overview = summary.market_overview || {};
+  const related = overview.related_assets || {};
+  const lead = (summary.news || [])[0];
+  return `
+    <div class="risk-top">
+      <div>
+        <div class="risk-title">リスク判定</div>
+        <div class="section-subtitle">${escapeHtml(shortText(overview.macro_tone, 92))}</div>
+      </div>
+      <div class="news-chip status-high">${escapeHtml(String(overview.geopolitical_risk || "medium").toUpperCase())}</div>
+    </div>
+    <div class="risk-grid">
+      <div class="risk-metric"><span>市場ムード</span><strong class="negative">${escapeHtml(shortText(overview.risk_mode, 16))}</strong></div>
+      <div class="risk-metric"><span>Fear & Greed</span><strong>${escapeHtml(related.fear_greed || "--")}</strong></div>
+      <div class="risk-metric"><span>重要ニュース</span><strong>${lead ? IMPACT_TEXT[lead.impact] || "影響中" : "--"}</strong></div>
+    </div>
+    <div class="risk-linked">
+      <span class="metric-chip">VIX ${escapeHtml(related.vix || "--")}</span>
+      <span class="metric-chip">WTI ${escapeHtml(related.oil || "--")}</span>
+      <span class="metric-chip">USD/JPY ${escapeHtml(related.usdjpy || "--")}</span>
+    </div>
   `;
 }
 
 function buildPairStrip(summary) {
-  const related = summary.market_overview.related_assets || {};
+  const related = summary.market_overview?.related_assets || {};
   const chips = [
     `USD/JPY ${related.usdjpy || "--"}`,
     `VIX ${related.vix || "--"}`,
     `WTI ${related.oil || "--"}`,
     `F&G ${related.fear_greed || "--"}`
   ];
-  return chips.map((chip, index) => `<span class="asset-chip${index === 0 ? " is-active" : ""}">${chip}</span>`).join("");
+  return chips.map((chip, index) => `<span class="asset-chip${index === 0 ? " is-active" : ""}">${escapeHtml(chip)}</span>`).join("");
 }
 
 function percentOrDash(value) {
@@ -237,26 +242,25 @@ function buildIntelBoard(summary) {
   const poly = intel.polymarket_iran || {};
   const pizzaSpot = pizza.top_spot
     ? `${pizza.top_spot}${pizza.top_spot_pct ? ` ${pizza.top_spot_pct}%` : ""}`
-    : "取得失敗";
+    : "--";
 
   return `
     <div class="section-header">
       <div>
         <div class="section-title">SIGNAL BOARD</div>
-        <div class="section-subtitle">地政学オルタナ指標</div>
+        <div class="section-subtitle">地政学リスクの補助シグナル</div>
       </div>
     </div>
     <div class="intel-grid">
       <article class="intel-card">
         <div class="intel-label">PENTAGON PIZZA METER</div>
-        <div class="intel-main">${pizza.status || "N/A"} / ${pizza.score ?? "--"}</div>
-        <div class="intel-meta">ピーク観測: ${pizzaSpot}</div>
-        <div class="intel-meta">Active spikes: ${pizza.active_spikes ?? "--"}</div>
+        <div class="intel-main">${escapeHtml(pizza.status || "N/A")} / ${escapeHtml(pizza.score ?? "--")}</div>
+        <div class="intel-meta">ピーク: ${escapeHtml(pizzaSpot)} / Spikes ${escapeHtml(pizza.active_spikes ?? "--")}</div>
       </article>
       <article class="intel-card">
         <div class="intel-label">POLYMARKET / IRAN</div>
         <div class="intel-list">
-          <div><span>恒久和平</span><strong>${percentOrDash(poly.peace_deal_yes)}</strong></div>
+          <div><span>和平合意</span><strong>${percentOrDash(poly.peace_deal_yes)}</strong></div>
           <div><span>外交会談</span><strong>${percentOrDash(poly.diplomatic_meeting_yes)}</strong></div>
           <div><span>ホルムズ正常化</span><strong>${percentOrDash(poly.hormuz_normal_yes)}</strong></div>
         </div>
@@ -271,7 +275,7 @@ function buildSummaryQuote(fxData) {
   const changeClass = toneClassFromNumber(item.change_pct);
   return `
     <div class="quote-bid">
-      <strong>${item.display_price}</strong>
+      <strong>${escapeHtml(item.display_price || formatNumber(item.price, item.decimals ?? 2))}</strong>
       <span>/ ${formatNumber(item.price, item.decimals ?? 2)}</span>
     </div>
     <div class="quote-change">
@@ -283,41 +287,37 @@ function buildSummaryQuote(fxData) {
 }
 
 function todayNote(summary) {
-  const global = summary.ai_summary.global;
+  const global = summary.ai_summary?.global || {};
   return `
     <h3>TODAY'S WATCH</h3>
-    <p>${global.jp_swing_hint}</p>
+    <p>${escapeHtml(shortText(global.jp_swing_hint, 110))}</p>
   `;
 }
 
 function newsCard(item) {
-  const sentimentClass = item.sentiment === "positive" ? "positive" : item.sentiment === "negative" ? "negative" : "neutral";
-  const tags = (item.tags || []).slice(0, 3).map((tag) => `<span class="tag">${tag.replace("scope_", "")}</span>`).join("");
-  const fxChip = item.category === "fx" && item.fx_bias
-    ? `<span class="fx-chip ${item.fx_bias.includes("円高") ? "yen-bullish" : "yen-bearish"}">${item.fx_bias}</span>`
-    : "";
+  const assets = (item.related_assets || []).slice(0, 3);
+  const source = [item.source, item.published_at].filter(Boolean).join(" / ");
+  const title = shortText(item.title, 92);
+  const summary = shortText(item.summary, 96);
+  const direction = directionText(item);
   return `
-    <article class="news-card">
+    <article class="news-card ${impactClass(item.impact)}">
       <div class="news-header">
-        <div class="news-left">
-          <div class="news-icon">${iconForNews(item)}</div>
-          <div>
-            <div class="news-chips">
-              <span class="news-chip ${sentimentClass}">${sentimentLabel(item.sentiment)}</span>
-              <span class="news-chip">${impactLabel(item.impact)}</span>
-              ${fxChip}
-            </div>
-            <a href="${item.link}" target="_blank" rel="noreferrer"><h3>${item.title}</h3></a>
+        <div class="news-icon">${escapeHtml(iconForNews(item))}</div>
+        <div class="news-body">
+          <div class="news-chips">
+            <span class="news-chip ${sentimentClass(item.sentiment)}">${escapeHtml(direction)}</span>
+            <span class="news-chip">${escapeHtml(IMPACT_TEXT[item.impact] || "影響中")}</span>
           </div>
+          <a href="${escapeHtml(item.link || "#")}" target="_blank" rel="noreferrer"><h3>${escapeHtml(title)}</h3></a>
         </div>
       </div>
-      <p>${item.summary}</p>
+      <div class="impact-note">${escapeHtml(impactNote(item))}</div>
+      ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
       <div class="news-meta">
-        <span>${item.source}</span>
-        <span>${item.published_at}</span>
-        <span>${(item.related_assets || []).join(" / ")}</span>
+        ${assets.map((asset) => `<span>${escapeHtml(asset)}</span>`).join("")}
+        <span>${escapeHtml(shortText(source, 44))}</span>
       </div>
-      <div class="news-tags">${tags}</div>
     </article>
   `;
 }
@@ -328,8 +328,8 @@ function marketCard(item, type) {
   const changeClass = toneClassFromNumber(item.change_pct || 0);
   const sparkColor = changeClass === "positive" ? "#8af0a7" : changeClass === "negative" ? "#f07f7f" : "#d7b36d";
 
-  node.querySelector(".market-symbol").textContent = item.symbol;
-  node.querySelector(".market-name").textContent = item.name;
+  node.querySelector(".market-symbol").textContent = item.symbol || "";
+  node.querySelector(".market-name").textContent = item.name || "";
   node.querySelector(".market-change").textContent = formatPercent(item.change_pct || 0);
   node.querySelector(".market-change").classList.add(changeClass);
   node.querySelector(".market-price").textContent = item.display_price || formatNumber(item.price, item.decimals ?? 2);
@@ -343,28 +343,27 @@ function marketCard(item, type) {
     chips.push(`24H ${formatPercent(item.change_24h_pct || 0)}`);
     chips.push(`VOL ${formatPercent(item.volume_change_pct || 0)}`);
   }
-  if (type === "bond" && item.duration) {
-    chips.push(`DUR ${item.duration}`);
-  }
-  metaRoot.innerHTML = chips.map((chip) => `<span class="metric-chip">${chip}</span>`).join("");
+  if (type === "bond" && item.duration) chips.push(`DUR ${item.duration}`);
+  metaRoot.innerHTML = chips.map((chip) => `<span class="metric-chip">${escapeHtml(chip)}</span>`).join("");
   return node;
 }
 
-function renderNewsList(rootId, items) {
+function renderNewsList(rootId, items, limit = 4) {
   const root = document.getElementById(rootId);
   root.innerHTML = "";
-  if (!items || items.length === 0) {
+  const visibleItems = (items || []).slice(0, limit);
+  if (visibleItems.length === 0) {
     root.innerHTML = `<div class="empty-state">該当ニュースなし</div>`;
     return;
   }
-  items.forEach((item) => {
+  visibleItems.forEach((item) => {
     root.insertAdjacentHTML("beforeend", newsCard(item));
   });
 }
 
 function renderCategoryNews(summary, category, rootId) {
-  const items = (summary.category_news?.[category] || []).slice(0, 5);
-  renderNewsList(rootId, items);
+  const items = summary.category_news?.[category] || [];
+  renderNewsList(rootId, items, 4);
 }
 
 function renderMarketGrid(rootId, items, type) {
@@ -381,43 +380,39 @@ function renderPumpList(items) {
   const root = document.getElementById("pumpList");
   root.innerHTML = "";
   if (!items || items.length === 0) {
-    root.innerHTML = `<div class="empty-state">対象なし</div>`;
+    root.innerHTML = `<div class="empty-state">パンプ候補なし</div>`;
     return;
   }
-  items.forEach((item, index) => {
-    const row = document.createElement("div");
-    row.className = "pump-row";
-    row.innerHTML = `
-      <div>
-        <div class="market-name">${index + 1}. ${item.symbol}</div>
-        <div class="section-subtitle">${item.name}</div>
+  items.slice(0, 5).forEach((item, index) => {
+    root.insertAdjacentHTML("beforeend", `
+      <div class="pump-row">
+        <div>
+          <div class="market-name">${index + 1}. ${escapeHtml(item.symbol)}</div>
+          <div class="market-range">1H ${formatPercent(item.change_1h_pct)} / 24H ${formatPercent(item.change_24h_pct)}</div>
+        </div>
+        <strong class="${toneClassFromNumber(item.pump_score)}">${formatNumber(item.pump_score, 2)}</strong>
       </div>
-      <div class="positive">score ${formatNumber(item.pump_score, 2)}</div>
-    `;
-    root.appendChild(row);
+    `);
   });
 }
 
-function renderWatchlist(data) {
+function renderWatchlist(watchlist) {
   const root = document.getElementById("watchlistGrid");
   root.innerHTML = "";
-  const items = data.items || [];
+  const items = watchlist.items || [];
   if (items.length === 0) {
-    root.innerHTML = `<div class="empty-state">ウォッチ対象なし</div>`;
+    root.innerHTML = `<div class="empty-state">ウォッチリストなし</div>`;
     return;
   }
   items.forEach((item) => {
+    const triggers = (item.triggers || []).map((trigger) => `<li>${escapeHtml(trigger)}</li>`).join("");
     const article = document.createElement("article");
     article.className = "watchlist-card";
     article.innerHTML = `
-      <div class="section-title">${item.symbol}</div>
-      <h3>${item.name}</h3>
-      <p>${item.thesis || ""}</p>
-      <div class="news-tags">
-        <span class="tag">${item.category}</span>
-        <span class="tag">${item.priority}</span>
-      </div>
-      <ul>${(item.notes || []).map((note) => `<li>${note}</li>`).join("")}</ul>
+      <div class="market-symbol">${escapeHtml(item.category || "")}</div>
+      <h3>${escapeHtml(item.symbol || "")} / ${escapeHtml(item.name || "")}</h3>
+      <p>${escapeHtml(item.note || "")}</p>
+      <ul>${triggers}</ul>
     `;
     root.appendChild(article);
   });
@@ -425,13 +420,13 @@ function renderWatchlist(data) {
 
 function renderSummary(summary, fxData) {
   document.getElementById("updatedAtLine").textContent = `最終更新 ${summary.updated_at}`;
+  document.getElementById("globalSummary").innerHTML = buildBriefCard(summary);
   document.getElementById("riskCard").innerHTML = buildRiskCard(summary);
   document.getElementById("intelBoard").innerHTML = buildIntelBoard(summary);
-  document.getElementById("globalSummary").innerHTML = buildBriefCard(summary);
   document.getElementById("pairStrip").innerHTML = buildPairStrip(summary);
   document.getElementById("summaryQuote").innerHTML = buildSummaryQuote(fxData);
   document.getElementById("todayNote").innerHTML = todayNote(summary);
-  renderNewsList("newsList", (summary.news || []).slice(0, 5));
+  renderNewsList("newsList", summary.news || [], 3);
 }
 
 async function loadDashboard() {
@@ -467,10 +462,10 @@ async function loadDashboard() {
   renderWatchlist(data.watchlist);
 
   if (fallbackUsed.length > 0) {
-    document.getElementById("updatedAtLine").textContent += ` [fallback: ${fallbackUsed.join(", ")}]`;
+    document.getElementById("updatedAtLine").textContent += ` / fallback: ${fallbackUsed.join(", ")}`;
   }
 }
 
 loadDashboard().catch((error) => {
-  document.getElementById("views").innerHTML = `<section class="solid-panel"><div class="empty-state">読み込み失敗: ${error.message}</div></section>`;
+  document.getElementById("views").innerHTML = `<section class="solid-panel"><div class="empty-state">読み取り失敗: ${escapeHtml(error.message)}</div></section>`;
 });
