@@ -154,6 +154,13 @@
       letter-spacing: -0.05em;
     }
 
+    .readout .sub-time {
+      margin-top: 6px;
+      color: var(--cyan);
+      font-size: clamp(1.05rem, 4.4vw, 1.45rem);
+      font-weight: 900;
+    }
+
     .readout p {
       margin: 7px 0 0;
       color: #d9e5f6;
@@ -232,6 +239,7 @@
       <div class="readout" aria-live="polite">
         <span class="label">いまの時刻</span>
         <strong id="timeText">8時00分</strong>
+        <div id="time12Text" class="sub-time">12時間表記：午前8時00分</div>
         <p id="diffText" hidden></p>
       </div>
 
@@ -258,6 +266,7 @@
     const minuteHand = document.getElementById("minuteHand");
     const dragKnob = document.getElementById("dragKnob");
     const timeText = document.getElementById("timeText");
+    const time12Text = document.getElementById("time12Text");
     const diffText = document.getElementById("diffText");
     const setBase = document.getElementById("setBase");
     const clearBase = document.getElementById("clearBase");
@@ -271,6 +280,15 @@
       const hour = Math.floor(normalized / 60);
       const minute = normalized % 60;
       return `${hour}時${String(minute).padStart(2, "0")}分`;
+    }
+
+    function formatTime12(totalMinutes) {
+      const normalized = normalizeMinutes(totalMinutes);
+      const hour24 = Math.floor(normalized / 60);
+      const minute = normalized % 60;
+      const period = hour24 < 12 ? "午前" : "午後";
+      const hour12 = hour24 % 12 === 0 ? 12 : hour24 % 12;
+      return `${period}${hour12}時${String(minute).padStart(2, "0")}分`;
     }
 
     function formatDiff(from, to) {
@@ -326,7 +344,8 @@
       dragKnob.setAttribute("cx", minuteEnd.x);
       dragKnob.setAttribute("cy", minuteEnd.y);
       timeText.textContent = formatTime(minutes);
-      clock.setAttribute("aria-valuetext", formatTime(minutes));
+      time12Text.textContent = `12時間表記：${formatTime12(minutes)}`;
+      clock.setAttribute("aria-valuetext", `${formatTime(minutes)}、${formatTime12(minutes)}`);
 
       if (baseMinutes === null) {
         diffText.hidden = true;
@@ -334,7 +353,7 @@
         clearBase.disabled = true;
       } else {
         diffText.hidden = false;
-        diffText.innerHTML = `基点 ${formatTime(baseMinutes)} から <b>${formatDiff(baseMinutes, minutes)}</b>`;
+        diffText.innerHTML = `基点 ${formatTime(baseMinutes)}（${formatTime12(baseMinutes)}）から <b>${formatDiff(baseMinutes, minutes)}</b>`;
         clearBase.disabled = false;
       }
     }
