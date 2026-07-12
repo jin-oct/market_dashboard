@@ -353,7 +353,7 @@
         clearBase.disabled = true;
       } else {
         diffText.hidden = false;
-        diffText.innerHTML = `基点 ${formatTime(baseMinutes)}（${formatTime12(baseMinutes)}）から <b>${formatDiff(baseMinutes, minutes)}</b>`;
+        diffText.innerHTML = `基点 ${formatTime(baseMinutes)}（${formatTime12(baseMinutes)}）から<br><b>${formatDiff(baseMinutes, minutes)}</b>`;
         clearBase.disabled = false;
       }
     }
